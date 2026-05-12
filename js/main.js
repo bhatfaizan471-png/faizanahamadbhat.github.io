@@ -1,13 +1,15 @@
-const fullName = "Paladugu Ganesh Naidu";
+// ===== TYPEWRITER EFFECT =====
+const fullName = "FAIZAN AHAMAD BHAT";
 const typedNameEl = document.getElementById("typed-name");
 const scrollIndicator = document.getElementById("scroll-indicator");
 const footerYear = document.getElementById("year");
 
 let currentIndex = 0;
 let deleting = false;
+let typewriterActive = true;
 
 function runTypewriter() {
-  if (!typedNameEl) return;
+  if (!typedNameEl || !typewriterActive) return;
 
   let nextDelay = 100;
 
@@ -17,7 +19,7 @@ function runTypewriter() {
 
     if (currentIndex >= fullName.length) {
       deleting = true;
-      nextDelay = 1500;
+      nextDelay = 2000; // Pause at full name
     } else {
       nextDelay = 90;
     }
@@ -27,15 +29,16 @@ function runTypewriter() {
 
     if (currentIndex <= 0) {
       deleting = false;
-      nextDelay = 450;
+      nextDelay = 500; // Pause before retyping
     } else {
       nextDelay = 55;
     }
   }
 
-  window.setTimeout(runTypewriter, nextDelay);
+  setTimeout(runTypewriter, nextDelay);
 }
 
+// ===== SCROLL INDICATOR (Fades when scrolling) =====
 function updateScrollIndicator() {
   if (!scrollIndicator) return;
 
@@ -52,7 +55,8 @@ function setupScrollIndicator() {
 
   let framePending = false;
 
-  scrollIndicator.addEventListener("click", () => {
+  scrollIndicator.addEventListener("click", (e) => {
+    e.preventDefault();
     const target = document.getElementById("skills");
     if (target) {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -61,9 +65,8 @@ function setupScrollIndicator() {
 
   window.addEventListener("scroll", () => {
     if (framePending) return;
-
     framePending = true;
-    window.requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
       updateScrollIndicator();
       framePending = false;
     });
@@ -72,10 +75,15 @@ function setupScrollIndicator() {
   updateScrollIndicator();
 }
 
+// ===== KEYBOARD ACCESSIBILITY FOR REVEAL CARDS =====
 function setupKeyboardRevealCards() {
   const revealCards = document.querySelectorAll(".reveal-card");
+  
+  if (revealCards.length === 0) return;
 
   revealCards.forEach((card) => {
+    card.setAttribute("tabindex", "0");
+    
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
@@ -89,12 +97,41 @@ function setupKeyboardRevealCards() {
   });
 }
 
+// ===== SET CURRENT YEAR IN FOOTER =====
 function setupCurrentYear() {
-  if (!footerYear) return;
-  footerYear.textContent = String(new Date().getFullYear());
+  if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+  }
 }
 
-runTypewriter();
-setupScrollIndicator();
-setupKeyboardRevealCards();
-setupCurrentYear();
+// ===== ADD SMOOTH SCROLL FOR ALL ANCHOR LINKS =====
+function setupSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+}
+
+// ===== INITIALIZE EVERYTHING =====
+function init() {
+  runTypewriter();
+  setupScrollIndicator();
+  setupKeyboardRevealCards();
+  setupCurrentYear();
+  setupSmoothScroll();
+}
+
+// Start when DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}

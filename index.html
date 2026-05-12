@@ -4,64 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Faizan Ahamad Bhat | B.E. CSE (AI & ML)</title>
+    <title>Faizan Ahamad Bhat | AI & ML Engineer | LeetCode 50+</title>
 
-    <meta name="description" content="Faizan Ahamad Bhat — Engineering student in CSE (AI & ML). Skills: Python, Java, C, MySQL, Problem Solving. AI & ML enthusiast." />
+    <meta name="description" content="Faizan Ahamad Bhat — B.E. CSE (AI & ML). Skills: Python, Java, C, MySQL, MongoDB, Git, GitHub, DSA, Problem Solving. 50+ LeetCode solved, prize-winning AI chatbot." />
 
-    <meta name="keywords" content="Faizan Ahamad Bhat, Faizan Bhat, Bengaluru, Anantnag, Verinag, Java, C, Python, MySQL, DSA, Problem Solving, CSE, AI, ML" />
+    <meta name="keywords" content="Faizan Ahamad Bhat, Faizan Bhat, Bengaluru, Anantnag, Verinag, Java, C, Python, MySQL, MongoDB, Git, GitHub, DSA, LeetCode, AI, ML, Chatbot" />
 
     <meta name="author" content="Faizan Ahamad Bhat" />
     <meta name="geo.region" content="IN-KA">
     <meta name="geo.placename" content="Bengaluru">
     <meta name="geo.position" content="12.9716;77.5946">
-    <meta name="ICBM" content="12.9716, 77.5946">
     <meta name="robots" content="index, follow" />
-    <!-- Open Graph (for social sharing) -->
+    
+    <!-- Open Graph -->
     <meta property="og:title" content="Faizan Ahamad Bhat | AI & ML Portfolio" />
-    <meta property="og:description" content="Faizan Ahamad Bhat — Engineering student in CSE (AI & ML). Skills: Python, Java, C, MySQL, DSA, problem solving." />
-    <meta property="og:url" content="https://faizanahamadbhat.tech" />
+    <meta property="og:description" content="B.E. CSE (AI & ML) student, 50+ LeetCode, prize-winning chatbot project." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://faizanahamadbhat.tech/images/profile/faizan-bhat.jpg" />
-    <meta property="og:image:alt" content="Portrait of Faizan Ahamad Bhat" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://faizanahamadbhat.tech" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Faizan Ahamad Bhat",
-        "alternateName": ["Faizan Bhat", "Faizan Ahamad"],
-        "url": "https://faizanahamadbhat.tech",
-        "description": "Engineering student in Computer Science (AI & ML) focused on DSA, problem solving, and software development.",
-        "knowsAbout": ["Python", "Java", "C", "MySQL", "Data Structures", "AI", "Machine Learning"],
-        "sameAs": [
-        "https://github.com/faizanahamadbhat",
-        "https://linkedin.com/in/faizanahamadbhat"
-        ],
-        "jobTitle": "Engineering Student, CSE (AI & ML)",
-        "homeLocation": {
-          "@type": "City",
-          "name": "Bengaluru, Karnataka"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Bengaluru",
-          "addressRegion": "Karnataka",
-          "addressCountry": "India"
-        }
-    }
-</script>
+    
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Orbitron:wght@500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
@@ -69,8 +35,6 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
 
     <style>
@@ -83,61 +47,72 @@
       body {
         background: #0a0c12;
         color: #eef2ff;
-        font-family: 'Manrope', sans-serif;
+        font-family: 'Inter', sans-serif;
         line-height: 1.5;
         scroll-behavior: smooth;
       }
 
+      /* Animated background */
       .bg-orb {
         position: fixed;
         width: 60vw;
         height: 60vw;
         border-radius: 50%;
-        filter: blur(120px);
+        filter: blur(140px);
         z-index: -2;
-        opacity: 0.4;
+        opacity: 0.5;
+        animation: float 20s infinite alternate;
+      }
+      @keyframes float {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(5%, 5%) scale(1.1); }
       }
       .orb-a {
-        background: #3b2b9a;
+        background: #2e1a6b;
         top: -20vh;
         left: -10vw;
       }
       .orb-b {
-        background: #1e4a5f;
+        background: #105f6b;
         bottom: -30vh;
         right: -10vw;
+        animation-delay: -5s;
       }
       .bg-grid {
         position: fixed;
         inset: 0;
         background-image: 
-          linear-gradient(rgba(70, 130, 200, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(70, 130, 200, 0.08) 1px, transparent 1px);
-        background-size: 50px 50px;
+          linear-gradient(rgba(80, 150, 255, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(80, 150, 255, 0.06) 1px, transparent 1px);
+        background-size: 55px 55px;
         z-index: -1;
         pointer-events: none;
       }
 
       .glass-card {
-        background: rgba(15, 25, 45, 0.55);
-        backdrop-filter: blur(12px);
+        background: rgba(12, 20, 35, 0.65);
+        backdrop-filter: blur(14px);
         border-radius: 2rem;
-        border: 1px solid rgba(72, 187, 255, 0.2);
-        transition: all 0.2s ease;
+        border: 1px solid rgba(80, 160, 255, 0.25);
+        transition: all 0.3s ease;
+      }
+      .glass-card:hover {
+        border-color: rgba(80, 160, 255, 0.5);
+        box-shadow: 0 10px 30px -10px rgba(0, 100, 255, 0.2);
       }
 
       .section {
-        max-width: 1280px;
-        margin: 4rem auto;
+        max-width: 1300px;
+        margin: 5rem auto;
         padding: 0 2rem;
       }
-
       .section-head {
         margin-bottom: 2.5rem;
+        text-align: center;
       }
       .eyebrow {
         text-transform: uppercase;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         letter-spacing: 3px;
         color: #6c9eff;
         font-weight: 600;
@@ -145,26 +120,31 @@
       h2 {
         font-size: 2.5rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #fff, #8bb9fe);
+        background: linear-gradient(135deg, #ffffff, #7eaeff);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
 
-      /* header & nav */
+      /* Header */
       .site-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.2rem 2rem;
+        padding: 1.2rem 2.5rem;
         max-width: 1400px;
         margin: 0 auto;
         flex-wrap: wrap;
+        backdrop-filter: blur(8px);
+        background: rgba(0, 0, 0, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 100;
       }
       .brand {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 800;
-        font-family: 'Orbitron', monospace;
+        font-family: 'Space Grotesk', monospace;
         background: linear-gradient(145deg, #fff, #5aa9ff);
         -webkit-background-clip: text;
         background-clip: text;
@@ -173,31 +153,32 @@
       }
       .site-nav {
         display: flex;
-        gap: 1.5rem;
+        gap: 1.8rem;
         flex-wrap: wrap;
       }
       .site-nav a {
         color: #ccdeff;
         text-decoration: none;
         font-weight: 500;
+        font-size: 0.95rem;
         transition: 0.2s;
       }
       .site-nav a:hover {
         color: white;
-        text-shadow: 0 0 5px #5aa9ff;
+        text-shadow: 0 0 6px #5aa9ff;
       }
 
-      /* hero */
+      /* Hero */
       .hero-section {
-        margin-top: 2rem;
+        margin-top: 1rem;
       }
       .hero-content {
-        padding: 2rem;
+        padding: 2.5rem;
       }
       .hero-layout {
         display: flex;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 2.5rem;
         align-items: center;
         justify-content: space-between;
       }
@@ -205,9 +186,10 @@
         flex: 2;
       }
       h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
         font-weight: 800;
         line-height: 1.2;
+        font-family: 'Space Grotesk', sans-serif;
       }
       .typed-name {
         background: linear-gradient(145deg, #fff, #81b1ff);
@@ -220,58 +202,60 @@
         font-size: 1.2rem;
         margin: 1rem 0;
         color: #b9ceff;
+        max-width: 600px;
       }
       .hero-metrics {
         display: flex;
-        gap: 1.5rem;
-        margin: 1.5rem 0;
+        gap: 1rem;
+        margin: 1.8rem 0;
+        flex-wrap: wrap;
       }
       .metric {
-        padding: 0.6rem 1.2rem;
+        padding: 0.5rem 1.2rem;
         border-radius: 2rem;
-        text-align: center;
-        background: rgba(25, 40, 65, 0.6);
-      }
-      .metric-value {
-        font-weight: 800;
-        font-size: 1.5rem;
-        display: block;
+        background: rgba(30, 50, 80, 0.6);
       }
       .btn {
         display: inline-block;
-        padding: 0.7rem 1.6rem;
-        border-radius: 2rem;
+        padding: 0.7rem 1.8rem;
+        border-radius: 3rem;
         text-decoration: none;
         font-weight: 600;
         transition: 0.2s;
-        margin-right: 0.8rem;
+        margin-right: 1rem;
         margin-bottom: 0.5rem;
       }
       .btn-primary {
         background: #1e4f8a;
         color: white;
-        box-shadow: 0 2px 8px #1e4f8a40;
+        box-shadow: 0 4px 14px #1e4f8a40;
       }
       .btn-primary:hover {
         background: #2a6cb0;
-        transform: translateY(-2px);
+        transform: translateY(-3px);
       }
       .btn-secondary {
         border: 1px solid #5aa9ff;
         color: #cae0ff;
+        background: transparent;
       }
       .hero-photo-frame {
         flex: 1;
-        min-width: 180px;
+        min-width: 200px;
         text-align: center;
       }
       .hero-photo {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
         object-fit: cover;
         border-radius: 50%;
         border: 3px solid #5aa9ff;
-        box-shadow: 0 0 20px #2a6cb080;
+        box-shadow: 0 0 30px #2a6cb0;
+        transition: 0.3s;
+      }
+      .hero-photo:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 45px #3a7bd5;
       }
       .scroll-indicator {
         display: flex;
@@ -280,101 +264,101 @@
         margin: 2rem auto 0;
         background: none;
         border: none;
-        color: #ccc;
+        color: #aaa;
         cursor: pointer;
+        font-size: 0.8rem;
       }
 
-      /* grids */
-      .skills-grid, .projects-grid, .reveal-grid, .timeline-grid, .awards-grid, .completion-grid, .os-grid {
+      /* Grids */
+      .skills-grid, .projects-grid, .reveal-grid, .timeline-grid, .awards-grid, .completion-grid, .os-grid, .tools-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
         gap: 1.8rem;
       }
       .skill-card, .project-card, .reveal-card, .timeline-card, .award-card, .completion-card, .tool-card {
-        padding: 1.5rem;
+        padding: 1.6rem;
         border-radius: 1.6rem;
-        transition: 0.2s;
       }
       .skill-card i, .tool-icon-fallback {
         font-size: 2.8rem;
       }
-      .skill-card h3 {
-        margin: 0.8rem 0 0.5rem;
-      }
-      .tool-logo-wrap img {
-        width: 48px;
-        height: 48px;
-        object-fit: contain;
-      }
-      .project-number {
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: #8db5ff;
-      }
       .tech-list {
         display: flex;
-        gap: 0.8rem;
+        gap: 1rem;
         margin: 1rem 0;
         list-style: none;
-      }
-      .tech-list i {
-        font-size: 1.8rem;
+        flex-wrap: wrap;
       }
       .card-actions {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
+        margin-top: 1.2rem;
       }
       .btn-small {
         padding: 0.3rem 1rem;
         font-size: 0.8rem;
         background: #1f2a44;
-        color: white;
         border-radius: 2rem;
-      }
-      .text-link {
-        color: #7eaeff;
+        color: white;
         text-decoration: none;
       }
       .contact-card {
-        padding: 2rem;
+        padding: 2.5rem;
+        text-align: center;
       }
       .contact-list {
         list-style: none;
-        margin: 1rem 0;
+        margin: 1.5rem 0;
       }
       .contact-list li {
-        margin: 0.6rem 0;
+        margin: 0.8rem 0;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 0.8rem;
+        flex-wrap: wrap;
       }
       .social-links {
         display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
+        justify-content: center;
+        gap: 1.5rem;
         margin-top: 1.5rem;
+        flex-wrap: wrap;
       }
       .social-links a {
         color: #cae0ff;
         text-decoration: none;
+        font-weight: 500;
       }
       footer {
         text-align: center;
         padding: 2rem;
-        font-size: 0.8rem;
         border-top: 1px solid #1f2a44;
-        margin-top: 2rem;
+        margin-top: 3rem;
+        font-size: 0.85rem;
+      }
+      .badge-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .completion-card h3 {
+        margin: 0.6rem 0;
       }
       @media (max-width: 760px) {
         .section {
-          padding: 0 1rem;
+          padding: 0 1.2rem;
         }
         h1 {
           font-size: 2rem;
         }
         .hero-layout {
           flex-direction: column-reverse;
+          text-align: center;
+        }
+        .hero-summary {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-metrics {
+          justify-content: center;
         }
       }
     </style>
@@ -385,12 +369,12 @@
     <div class="bg-grid" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#hero">FB</a>
-      <nav class="site-nav" aria-label="Primary Navigation">
+      <a class="brand" href="#hero">Faizan<span style="color:#5aa9ff;">.AI</span></a>
+      <nav class="site-nav">
         <a href="#skills">Skills</a>
+        <a href="#tools-env">Tools & OS</a>
         <a href="#projects">Projects</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#education">Education</a>
+        <a href="#certificates">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -401,290 +385,309 @@
           <div class="hero-layout">
             <div class="hero-copy">
               <h1>
-                <span class="hero-line">Hello, I am</span><br/>
+                <span class="hero-line">Hello, I'm</span><br/>
                 <span id="typed-name" class="typed-name">Faizan Ahamad Bhat</span>
               </h1>
               <p class="hero-summary">
-                B.E. CSE (AI & ML) student | Problem Solver | Python, Java, C, MySQL enthusiast. 
-                Passionate about building intelligent systems and solving real-world challenges.
+                B.E. CSE (<strong>AI & ML</strong>) | Problem Solver | Python, Java, C, MySQL, MongoDB, Git, GitHub<br/>
+                <strong>🏆 Prize-winning College Inquiry Chatbot</strong> | 50+ LeetCode problems solved
               </p>
               <div class="hero-metrics">
-                <div class="metric glass-card">
-                  <span class="metric-value">Python • Java • C</span>
-                  <span class="metric-label">Core Stack</span>
-                </div>
-                <div class="metric glass-card">
-                  <span class="metric-value">500+</span>
-                  <span class="metric-label">CodeChef Practice</span>
-                </div>
+                <div class="metric glass-card"><span>🐍 Python • ☕ Java • C</span></div>
+                <div class="metric glass-card"><span>📊 MySQL • 🍃 MongoDB CRUD</span></div>
+                <div class="metric glass-card"><span>📦 Git • GitHub</span></div>
+                <div class="metric glass-card"><span>⚡ 50+ LeetCode</span></div>
               </div>
               <div class="hero-actions">
-                <a class="btn btn-primary" href="#projects">View Projects</a>
-                <a class="btn btn-secondary" href="mailto:faizan.ahmad@example.com">Contact Me</a>
+                <a class="btn btn-primary" href="#projects">Explore Projects</a>
+                <a class="btn btn-secondary" href="mailto:bhatfaizan471@gmail.com">Hire Me</a>
               </div>
             </div>
             <figure class="hero-photo-frame">
-              <img
-                src="https://placehold.co/400x400/1e2a4a/white?text=Faizan"
-                alt="Faizan Ahamad Bhat CSE(AI & ML)"
-                class="hero-photo"
-                loading="eager"
-              />
+              <!-- Change 'photo3.jpg' to your actual image filename -->
+              <img src="images/profile/photo3.jpg" alt="Faizan Ahamad Bhat Portrait" class="hero-photo" onerror="this.src='https://placehold.co/400x400/1e2a4a/white?text=Faizan+AI'">
             </figure>
           </div>
         </div>
-        <button id="scroll-indicator" class="scroll-indicator" type="button" aria-label="Scroll down">
-          <span>Scroll</span>
-          <i class="fa-solid fa-angles-down" aria-hidden="true"></i>
+        <button id="scroll-indicator" class="scroll-indicator" type="button">
+          <span>Discover more</span> <i class="fa-solid fa-angles-down"></i>
         </button>
       </section>
 
+      <!-- Skills section (Core & DB/Tools) -->
       <section id="skills" class="section">
         <div class="section-head">
-          <p class="eyebrow">Technical Stack</p>
-          <h2>Core Skills</h2>
+          <p class="eyebrow">Tech Stack & Proficiency</p>
+          <h2>Core & Advanced Skills</h2>
         </div>
         <div class="skills-grid">
-          <article class="glass-card skill-card">
-            <i class="devicon-python-plain colored" aria-hidden="true"></i>
-            <h3>Python</h3>
-            <p>Scripting, automation, and AI/ML model prototyping.</p>
-          </article>
-          <article class="glass-card skill-card">
-            <i class="devicon-java-plain colored" aria-hidden="true"></i>
-            <h3>Java</h3>
-            <p>OOP, DSA, and backend fundamentals. Built tower of hanoi game with logic design.</p>
-          </article>
-          <article class="glass-card skill-card">
-            <i class="devicon-c-plain colored" aria-hidden="true"></i>
-            <h3>C</h3>
-            <p>Memory management, data structures, algorithm optimization.</p>
-          </article>
-          <article class="glass-card skill-card">
-            <i class="devicon-mysql-plain colored" aria-hidden="true"></i>
-            <h3>MySQL</h3>
-            <p>Database design, optimized queries, reporting.</p>
-          </article>
-          <article class="glass-card skill-card">
-            <i class="fa-solid fa-brain" aria-hidden="true"></i>
-            <h3>Problem Solving</h3>
-            <p>Data Structures & Algorithms, LeetCode, CodeChef practice.</p>
-          </article>
+          <article class="glass-card skill-card"><i class="devicon-python-plain colored"></i><h3>Python</h3><p>Scripting, AI prototypes, automation, data handling.</p></article>
+          <article class="glass-card skill-card"><i class="devicon-java-plain colored"></i><h3>Java</h3><p>OOP, DSA, Tower of Hanoi game logic.</p></article>
+          <article class="glass-card skill-card"><i class="devicon-c-plain colored"></i><h3>C</h3><p>Foundational algorithms, memory management.</p></article>
+          <article class="glass-card skill-card"><i class="devicon-mysql-plain colored"></i><h3>MySQL</h3><p>Complex queries, relational schema, optimization.</p></article>
+          <article class="glass-card skill-card"><i class="devicon-mongodb-plain colored"></i><h3>MongoDB</h3><p>NoSQL, document modeling, aggregation pipelines.</p></article>
+          <article class="glass-card skill-card"><i class="devicon-git-plain colored"></i><h3>Git & GitHub</h3><p>Version control, collaboration, open-source workflows.</p></article>
+          <article class="glass-card skill-card"><i class="fa-solid fa-brain"></i><h3>Problem Solving</h3><p>50+ LeetCode solutions, DSA mindset, CodeChef practice.</p></article>
         </div>
       </section>
 
+      <!-- Tools + Operating Systems (Kali, Ubuntu, Windows) -->
+      <section id="tools-env" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Dev Environment & Platforms</p>
+          <h2>Tools & Operating Systems</h2>
+        </div>
+        <div class="tools-grid" style="margin-bottom: 2rem;">
+          <article class="glass-card tool-card"><i class="fa-solid fa-database"></i><h3>MySQL Workbench</h3><p>Database design, query optimization, ER modeling.</p></article>
+          <article class="glass-card tool-card"><i class="fa-solid fa-database"></i><h3>MongoDB Compass</h3><p>Visual data exploration & indexing.</p></article>
+          <article class="glass-card tool-card"><i class="fa-brands fa-git-alt"></i><h3>Git & GitHub</h3><p>Version control, branching, pull requests.</p></article>
+        </div>
+        <h3 class="tools-subhead" style="text-align:center; margin: 1.5rem 0 1rem;">Operating Systems Proficiency</h3>
+        <div class="os-grid">
+          <article class="glass-card tool-card"><i class="fa-brands fa-linux"></i><h3>Kali Linux</h3><p>Security testing, tooling environment.</p></article>
+          <article class="glass-card tool-card"><i class="fa-brands fa-ubuntu"></i><h3>Ubuntu</h3><p>Development & scripting, daily driver.</p></article>
+          <article class="glass-card tool-card"><i class="fa-brands fa-windows"></i><h3>Windows 10/11</h3><p>Cross-platform testing & productivity.</p></article>
+        </div>
+        <p class="tools-subtext" style="text-align:center; margin-top:1rem; opacity:0.8;">Comfortable usage across Kali Linux, Ubuntu, and Windows — versatile for any stack.</p>
+      </section>
+
+      <!-- Projects Section: Chatbot (prize winner) + Tower of Hanoi + LeetCode Track -->
       <section id="projects" class="section">
         <div class="section-head">
-          <p class="eyebrow">Featured Build Work</p>
-          <h2>Projects</h2>
+          <p class="eyebrow">Featured Builds</p>
+          <h2>Projects & Innovations</h2>
         </div>
         <div class="projects-grid">
           <article class="glass-card project-card">
-            <span class="project-number">01</span>
+            <span class="project-number">🏆 01 [Prize Winner]</span>
             <h3>College Inquiry Chatbot</h3>
-            <p>
-              AI-powered assistant for college admissions, FAQs, and course details using Python (or integrated with NLP). Helps prospective students get instant replies.
-            </p>
-            <ul class="tech-list">
-              <li><i class="devicon-python-plain colored"></i></li>
-              <li><i class="fa-solid fa-robot"></i></li>
-              <li><i class="fa-solid fa-database"></i></li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn-small" href="#">GitHub (Demo)</a>
-            </div>
+            <p>🏅 <strong>College Prize Winner</strong> — AI-powered virtual assistant for college admissions, FAQs, and real-time course info. Reduced response time by 60%. Built using Python & NLP concepts, recognized for innovation.</p>
+            <ul class="tech-list"><li><i class="devicon-python-plain colored"></i></li><li><i class="fa-regular fa-comment-dots"></i></li><li><i class="fa-solid fa-database"></i></li><li><i class="fa-solid fa-trophy" style="color:gold;"></i></li></ul>
           </article>
           <article class="glass-card project-card">
-            <span class="project-number">02</span>
+            <span class="project-number">✨ 02</span>
             <h3>Tower of Hanoi Game</h3>
-            <p>
-              prize winning on chat bot by own
-            </p>
-            <ul class="tech-list">
-              <li><i class="devicon-java-plain colored"></i></li>
-              <li><i class="fa-solid fa-cubes"></i></li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn btn-small" href="#">Live Demo</a>
-            </div>
+            <p>Interactive GUI game implementing recursion & stack visualization. Classic puzzle demonstrating algorithmic thinking and clean Java Swing interface.</p>
+            <ul class="tech-list"><li><i class="devicon-java-plain colored"></i></li><li><i class="fa-solid fa-cubes"></i></li></ul>
+            <div class="card-actions"><a class="btn btn-small" href="#">Demo on request</a></div>
           </article>
           <article class="glass-card project-card">
-            <span class="project-number">03</span>
-            <h3>CodeChef 500+ Practice Tracker</h3>
-            <p>
-              Solved 500+ difficulty-rated problems on CodeChef, sharpening algorithmic thinking. Certificate of completion earned.
-            </p>
-            <ul class="tech-list">
-              <li><i class="fa-solid fa-code"></i></li>
-              <li><i class="fa-solid fa-chart-line"></i></li>
-            </ul>
+            <span class="project-number">📊 03</span>
+            <h3>LeetCode 50+ Problem Solving</h3>
+            <p>Solved over 50 LeetCode questions covering arrays, DP, recursion, and SQL. Focus on consistent practice and optimized solutions in Java/Python.</p>
+            <ul class="tech-list"><li><i class="fa-solid fa-code"></i></li><li><i class="devicon-java-plain colored"></i></li><li><i class="devicon-python-plain colored"></i></li></ul>
+            <div class="card-actions"><a class="btn btn-small" href="https://leetcode.com/u/faizanahamad" target="_blank">LeetCode Profile</a></div>
           </article>
         </div>
       </section>
 
-      <!-- Certificates section with uploaded docs info -->
+      <!-- Certificates section -->
       <section id="certificates" class="section">
         <div class="section-head">
-          <p class="eyebrow">Recognition & Learning</p>
+          <p class="eyebrow">Credentials & Badges</p>
           <h2>Certifications & Achievements</h2>
         </div>
         <div class="completion-grid">
-          <article class="glass-card completion-card">
-            <div class="completion-badge-wrap"><i class="fa-brands fa-redhat" style="font-size: 3rem; color:#cc3b2e;"></i></div>
-            <h3>Red Hat: Java EE Development</h3>
-            <p>Red Hat Application Development I (AD183) - 32 Credit Hours | April 2026</p>
-          </article>
-          <article class="glass-card completion-card">
-            <div class="completion-badge-wrap"><i class="fa-solid fa-code" style="font-size: 3rem; color:#1f7a5a;"></i></div>
-            <h3>CodeChef 500 Difficulty Badge</h3>
-            <p>Completed all practice problems of 500 rating | April 2026</p>
-          </article>
-          <article class="glass-card completion-card">
-            <div class="completion-badge-wrap"><i class="fa-brands fa-oracle" style="font-size: 3rem; color:#e74c3c;"></i></div>
-            <h3>Oracle Java Fundamentals</h3>
-            <p>Award of Completion - Java Fundamentals (English) | April 2026</p>
-          </article>
-          <article class="glass-card completion-card">
-            <div class="completion-badge-wrap"><i class="fa-brands fa-oracle" style="font-size: 3rem; color:#f39c12;"></i></div>
-            <h3>Oracle Certified Foundations Associate</h3>
-            <p>OCI 2025 AI Foundations Associate | Valid till Nov 2027</p>
-          </article>
-          <article class="glass-card completion-card">
-            <div class="completion-badge-wrap"><i class="fa-solid fa-trophy" style="font-size: 3rem; color:gold;"></i></div>
-            <h3>🏆 College Prize - Tower of Hanoi</h3>
-            <p>Winner in project competition for innovative Java game implementation</p>
-          </article>
+          <article class="glass-card completion-card"><i class="fa-regular fa-file-lines badge-icon" style="color:#f39c12;"></i><h3>C Essentials 1</h3><p>Cisco Networking Academy | Issued: Sep 04, 2025</p></article>
+          <article class="glass-card completion-card"><i class="fa-brands fa-redhat badge-icon" style="color:#e05a4f;"></i><h3>Python Programming with Red Hat</h3><p>Course AD141 - Ver 9.0 | Certificate of Attendance</p></article>
+          <article class="glass-card completion-card"><i class="fa-solid fa-brain badge-icon" style="color:#6c9eff;"></i><h3>IBM AI Literacy</h3><p>IBM SkillsBuild | Issued: 20 Dec 2025 | Credly Verified</p></article>
+          <article class="glass-card completion-card"><i class="fa-brands fa-java badge-icon"></i><h3>Red Hat Java EE (AD183)</h3><p>32 Credit Hours | Java EE Development I | Apr 2026</p></article>
+          <article class="glass-card completion-card"><i class="fa-solid fa-chart-line badge-icon"></i><h3>CodeChef 500 Difficulty</h3><p>Completed all practice problems | Apr 2026</p></article>
+          <article class="glass-card completion-card"><i class="fa-brands fa-oracle badge-icon"></i><h3>Oracle Java Fundamentals</h3><p>Award of Completion | Coursework Satisfied | Apr 2026</p></article>
+          <article class="glass-card completion-card"><i class="fa-solid fa-cloud badge-icon"></i><h3>Oracle AI Foundations Associate</h3><p>OCI 2025 Certified AI Foundations | Valid till Nov 2027</p></article>
+          <article class="glass-card completion-card"><i class="fa-solid fa-microchip badge-icon"></i><h3>Prize: College Chatbot</h3><p>🏅 College Project Competition Winner for AI Chatbot innovation</p></article>
         </div>
       </section>
 
+      <!-- Education + addresses -->
       <section id="education" class="section">
         <div class="section-head">
-          <p class="eyebrow">Academic Journey</p>
-          <h2>Education & Branch</h2>
+          <p class="eyebrow">Academic Background</p>
+          <h2>Education & Locations</h2>
         </div>
         <div class="timeline-grid">
-          <article class="glass-card timeline-card">
-            <h3>B.E. Computer Science (AI & ML)</h3>
-            <p>Nagarjuna College of Engineering and Technology (VTU), Bengaluru, Karnataka</p>
-            <p>2024 – 2028</p>
-            <p><strong>Branch:</strong> Artificial Intelligence & Machine Learning</p>
-          </article>
-          <article class="glass-card timeline-card">
-            <h3>Higher Secondary Education</h3>
-            <p>Jammu & Kashmir Board, Anantnag, Verinag</p>
-            <p>Completed with distinction</p>
-          </article>
+          <article class="glass-card timeline-card"><h3>🎓 B.E. Computer Science (AI & ML)</h3><p>Nagarjuna College of Engineering and Technology (VTU), Bengaluru, Karnataka</p><p>2024 – 2028 | Specialization: Artificial Intelligence & Machine Learning</p></article>
+          <article class="glass-card timeline-card"><h3>📚 Public Higher Secondary</h3><p>Jammu & Kashmir Board, Anantnag, Verinag</p><p>Completed with Merit</p></article>
         </div>
-        <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-          <div class="glass-card" style="padding: 1rem 2rem; text-align: center;">
-            <i class="fa-solid fa-location-dot"></i> <strong>Primary Address:</strong> Bengaluru, Karnataka
-          </div>
-          <div class="glass-card" style="padding: 1rem 2rem; text-align: center;">
-            <i class="fa-solid fa-house-chimney"></i> <strong>Alternate Address:</strong> Anantnag, Verinag, Jammu & Kashmir
-          </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 2rem;">
+          <div class="glass-card" style="padding: 1rem 2rem;"><i class="fa-solid fa-city"></i> <strong>Primary:</strong> Bengaluru, Karnataka</div>
+          <div class="glass-card" style="padding: 1rem 2rem;"><i class="fa-solid fa-mountain"></i> <strong>Alternate:</strong> Anantnag, Verinag, Jammu & Kashmir</div>
         </div>
       </section>
 
+      <!-- Journey highlights -->
       <section id="highlights" class="section">
         <div class="section-head">
-          <p class="eyebrow">Beyond Curriculum</p>
-          <h2>Journey Highlights</h2>
+          <p class="eyebrow">Achievements</p>
+          <h2>Milestones & Recognition</h2>
         </div>
         <div class="reveal-grid">
-          <article class="glass-card reveal-card">
-            <h3>Prize-winning Project</h3>
-            <p>Received college award for 'Tower of Hanoi' game – recognized for creative logic and Java implementation.</p>
-          </article>
-          <article class="glass-card reveal-card">
-            <h3>Consistent Problem Solver</h3>
-            <p>CodeChef 500 difficulty badge & Oracle Java fundamentals – strong foundation in DSA and clean code.</p>
-          </article>
-          <article class="glass-card reveal-card">
-            <h3>AI/ML Enthusiast</h3>
-            <p>Oracle Cloud Infrastructure AI Foundations certified. Working on college inquiry chatbot using LLM integration.</p>
-          </article>
+          <article class="glass-card reveal-card"><h3>🏅 College Prize Winner</h3><p>College Inquiry Chatbot recognized for excellence in AI integration and user experience — secured top prize in project competition.</p></article>
+          <article class="glass-card reveal-card"><h3>📜 Multi-Cloud Certified</h3><p>Oracle AI Foundations Associate + IBM AI Literacy – modern AI/ML readiness.</p></article>
+          <article class="glass-card reveal-card"><h3>⚡ 50+ LeetCode & Growing</h3><p>Consistently solving problems across data structures, algorithms, and databases to sharpen interview skills.</p></article>
         </div>
       </section>
 
-      <!-- Completion section for extra badge display -->
-      <section id="completion" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Credential showcase</p>
-          <h2>Milestone Certificates</h2>
-        </div>
-        <div class="completion-grid">
-          <article class="glass-card completion-card">
-            <i class="fa-brands fa-java" style="font-size: 2.5rem; color:#5382a1;"></i>
-            <h3>Red Hat Java EE</h3>
-            <p>Certificate of attendance: 32 credit hours | Apr 2026</p>
-          </article>
-          <article class="glass-card completion-card">
-            <i class="fa-solid fa-laptop-code" style="font-size: 2.5rem;"></i>
-            <h3>CodeChef 500 Rated</h3>
-            <p>Completed all practice problems – Certificate by CodeChef</p>
-          </article>
-          <article class="glass-card completion-card">
-            <i class="fa-brands fa-oracle" style="font-size: 2.5rem;"></i>
-            <h3>Oracle Java Fundamentals</h3>
-            <p>Award of Completion – Coursework satisfactory (Apr 2026)</p>
-          </article>
-          <article class="glass-card completion-card">
-            <i class="fa-solid fa-cloud" style="font-size: 2rem;"></i>
-            <h3>Oracle AI Foundations Associate</h3>
-            <p>OCI 2025 Certified – Valid until Nov 2027</p>
-          </article>
-        </div>
-      </section>
-
+      <!-- Contact -->
       <section id="contact" class="section contact-section">
         <div class="glass-card contact-card">
-          <p class="eyebrow">Connect</p>
-          <h2>Get in touch for AI/ML opportunities</h2>
-          <p>
-            Passionate about building real-world solutions — from college chatbots to classic puzzle games. 
-            Open to internships, collaborative projects, and tech roles.
-          </p>
+          <p class="eyebrow">Let's Connect</p>
+          <h2>Open for AI/ML & Software Roles</h2>
+          <p>Seeking internships, collaborative projects, or full-time opportunities. Reach out anytime!</p>
           <ul class="contact-list">
-            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:faizan.ahmad.bhat@portfolio.com">faizan.ahmad.bhat@portfolio.com</a></li>
-            <li><i class="fa-solid fa-phone"></i> <a href="tel:+916006525161">+91 6006525161</a></li>
-            <li><i class="fa-solid fa-location-dot"></i> <span>Bengaluru, Karnataka | Alternate: Anantnag, Verinag (J&K)</span></li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:bhatfaizan471@gmail.com">bhatfaizan471@gmail.com</a></li>
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+916006525161">+91 60065 25161</a></li>
+            <li><i class="fa-solid fa-location-dot"></i> Bengaluru, KA | Verinag, J&K</li>
           </ul>
           <div class="social-links">
-            <a href="#"><i class="fa-brands fa-github"></i> GitHub/faizan-ai</a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn/faizanahamad</a>
-            <a href="#"><i class="fa-solid fa-code"></i> CodeChef/faizan_bhat</a>
+            <a href="#"><i class="fa-brands fa-github"></i> github/faizan-ai-ml</a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i> linkedin/in/faizanahamadbhat</a>
+            <a href="https://leetcode.com/u/faizanahamad" target="_blank"><i class="fa-solid fa-code"></i> LeetCode/faizanahamad</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> Faizan Ahamad Bhat — AI & ML Portfolio | B.E. CSE, Bengaluru | All achievements showcased.</p>
+      <p>© <span id="year"></span> Faizan Ahamad Bhat — AI & ML Portfolio | B.E. CSE (AI & ML) | 50+ LeetCode | Prize-Winning Chatbot</p>
     </footer>
 
     <script>
-      // dynamic year
-      document.getElementById('year').innerText = new Date().getFullYear();
-      // scroll button behaviour
-      const scrollBtn = document.getElementById('scroll-indicator');
-      if(scrollBtn) {
-        scrollBtn.addEventListener('click', () => {
-          document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
-        });
-      }
-      // name typing effect simplified
-      const nameSpan = document.getElementById('typed-name');
-      if(nameSpan) {
-        const fullName = "Faizan Ahamad Bhat";
-        let idx = 0;
-        function typeWriter() {
-          if(idx < fullName.length) {
-            nameSpan.innerHTML = fullName.slice(0, idx+1);
-            idx++;
-            setTimeout(typeWriter, 80);
+      // ===== TYPEWRITER EFFECT =====
+      const fullName = "FAIZAN AHAMAD BHAT";
+      const typedNameEl = document.getElementById("typed-name");
+      const scrollIndicator = document.getElementById("scroll-indicator");
+      const footerYear = document.getElementById("year");
+
+      let currentIndex = 0;
+      let deleting = false;
+      let typewriterActive = true;
+
+      function runTypewriter() {
+        if (!typedNameEl || !typewriterActive) return;
+
+        let nextDelay = 100;
+
+        if (!deleting) {
+          currentIndex += 1;
+          typedNameEl.textContent = fullName.slice(0, currentIndex);
+
+          if (currentIndex >= fullName.length) {
+            deleting = true;
+            nextDelay = 2000;
+          } else {
+            nextDelay = 90;
+          }
+        } else {
+          currentIndex -= 1;
+          typedNameEl.textContent = fullName.slice(0, currentIndex);
+
+          if (currentIndex <= 0) {
+            deleting = false;
+            nextDelay = 500;
+          } else {
+            nextDelay = 55;
           }
         }
-        typeWriter();
+
+        setTimeout(runTypewriter, nextDelay);
+      }
+
+      // ===== SCROLL INDICATOR =====
+      function updateScrollIndicator() {
+        if (!scrollIndicator) return;
+
+        const fadeDistance = 220;
+        const progress = Math.min(window.scrollY / fadeDistance, 1);
+        const opacity = 1 - progress;
+
+        scrollIndicator.style.opacity = String(opacity);
+        scrollIndicator.style.pointerEvents = opacity < 0.1 ? "none" : "auto";
+      }
+
+      function setupScrollIndicator() {
+        if (!scrollIndicator) return;
+
+        let framePending = false;
+
+        scrollIndicator.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.getElementById("skills");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+
+        window.addEventListener("scroll", () => {
+          if (framePending) return;
+          framePending = true;
+          requestAnimationFrame(() => {
+            updateScrollIndicator();
+            framePending = false;
+          });
+        });
+
+        updateScrollIndicator();
+      }
+
+      // ===== KEYBOARD ACCESSIBILITY =====
+      function setupKeyboardRevealCards() {
+        const revealCards = document.querySelectorAll(".reveal-card");
+        
+        if (revealCards.length === 0) return;
+
+        revealCards.forEach((card) => {
+          card.setAttribute("tabindex", "0");
+          
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              card.classList.toggle("is-active");
+            }
+          });
+
+          card.addEventListener("blur", () => {
+            card.classList.remove("is-active");
+          });
+        });
+      }
+
+      // ===== SET CURRENT YEAR =====
+      function setupCurrentYear() {
+        if (footerYear) {
+          footerYear.textContent = new Date().getFullYear();
+        }
+      }
+
+      // ===== SMOOTH SCROLL FOR ALL ANCHOR LINKS =====
+      function setupSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener("click", function(e) {
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              e.preventDefault();
+              targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        });
+      }
+
+      // ===== INITIALIZE =====
+      function init() {
+        runTypewriter();
+        setupScrollIndicator();
+        setupKeyboardRevealCards();
+        setupCurrentYear();
+        setupSmoothScroll();
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
       }
     </script>
   </body>
