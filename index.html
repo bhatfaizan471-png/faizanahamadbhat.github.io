@@ -6,46 +6,53 @@
 
     <title>Faizan Ahamad Bhat | B.E. CSE (AI & ML)</title>
 
-    <meta name="description" content="Faizan Ahamad Bhat — Engineering student in CSE (AI & ML). Skills: Java, C, Python, MySQL, DSA, problem solving." />
+    <meta name="description" content="Faizan Ahamad Bhat — Engineering student in CSE (AI & ML). Skills: Python, Java, C, MySQL, Problem Solving. AI & ML enthusiast." />
 
-    <meta name="keywords" content="Faizan Ahamad Bhat, Faizan Bhat, Bangalore, Java, C, Python, MySQL, DSA, Problem Solving, CSE, AI, ML" />
+    <meta name="keywords" content="Faizan Ahamad Bhat, Faizan Bhat, Bengaluru, Anantnag, Verinag, Java, C, Python, MySQL, DSA, Problem Solving, CSE, AI, ML" />
 
     <meta name="author" content="Faizan Ahamad Bhat" />
-    <meta name="geo.region" content="IN">
+    <meta name="geo.region" content="IN-KA">
     <meta name="geo.placename" content="Bengaluru">
-    <meta name="geo.place" content="Bengaluru, Karnataka, India">
     <meta name="geo.position" content="12.9716;77.5946">
     <meta name="ICBM" content="12.9716, 77.5946">
     <meta name="robots" content="index, follow" />
     <!-- Open Graph (for social sharing) -->
-    <meta property="og:title" content="Paladugu Ganesh Naidu | Cybersecurity Portfolio" />
-    <meta property="og:description" content="Offensive security portfolio with projects, tools, and cybersecurity writeups." />
-    <meta property="og:url" content="https://paladuguganeshnaidu.tech" />
+    <meta property="og:title" content="Faizan Ahamad Bhat | AI & ML Portfolio" />
+    <meta property="og:description" content="Faizan Ahamad Bhat — Engineering student in CSE (AI & ML). Skills: Python, Java, C, MySQL, DSA, problem solving." />
+    <meta property="og:url" content="https://faizanahamadbhat.tech" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://paladuguganeshnaidu.tech/images/profile/ganesh-naidu.jpg" />
-    <meta property="og:image:alt" content="Portrait of Paladugu Ganesh Naidu" />
+    <meta property="og:image" content="https://faizanahamadbhat.tech/images/profile/faizan-bhat.jpg" />
+    <meta property="og:image:alt" content="Portrait of Faizan Ahamad Bhat" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://paladuguganeshnaidu.tech/images/profile/ganesh-naidu.jpg" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://paladuguganeshnaidu.tech" />
+    <link rel="canonical" href="https://faizanahamadbhat.tech" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Faizan Ahamad Bhat",
-        "alternateName": ["Ganesh Naidu", "Ganesh Kuchivaripalli ,Paladugu Ganesh , Paladugu,Kuchivaripalli,paladugu naidu,paladugu ganesh naidu,ganesh naidu"],
-        "url": "https://paladuguganeshnaidu.tech",
-        "image": "https://paladuguganeshnaidu.tech/images/profile/ganesh-naidu.jpg",
+        "alternateName": ["Faizan Bhat", "Faizan Ahamad"],
+        "url": "https://faizanahamadbhat.tech",
         "description": "Engineering student in Computer Science (AI & ML) focused on DSA, problem solving, and software development.",
-        "knowsAbout": ["Java", "C", "Python", "MySQL", "Data Structures", "AI", "Machine Learning"],
+        "knowsAbout": ["Python", "Java", "C", "MySQL", "Data Structures", "AI", "Machine Learning"],
         "sameAs": [
-        "https://github.com/paladuguganeshnaidu",
-        "https://linkedin.com/in/paladuguganeshnaidu"
+        "https://github.com/faizanahamadbhat",
+        "https://linkedin.com/in/faizanahamadbhat"
         ],
-        "jobTitle": "Engineering Student, CSE (AI & ML)"
+        "jobTitle": "Engineering Student, CSE (AI & ML)",
+        "homeLocation": {
+          "@type": "City",
+          "name": "Bengaluru, Karnataka"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "addressCountry": "India"
+        }
     }
 </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,7 +73,311 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #0a0c12;
+        color: #eef2ff;
+        font-family: 'Manrope', sans-serif;
+        line-height: 1.5;
+        scroll-behavior: smooth;
+      }
+
+      .bg-orb {
+        position: fixed;
+        width: 60vw;
+        height: 60vw;
+        border-radius: 50%;
+        filter: blur(120px);
+        z-index: -2;
+        opacity: 0.4;
+      }
+      .orb-a {
+        background: #3b2b9a;
+        top: -20vh;
+        left: -10vw;
+      }
+      .orb-b {
+        background: #1e4a5f;
+        bottom: -30vh;
+        right: -10vw;
+      }
+      .bg-grid {
+        position: fixed;
+        inset: 0;
+        background-image: 
+          linear-gradient(rgba(70, 130, 200, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(70, 130, 200, 0.08) 1px, transparent 1px);
+        background-size: 50px 50px;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .glass-card {
+        background: rgba(15, 25, 45, 0.55);
+        backdrop-filter: blur(12px);
+        border-radius: 2rem;
+        border: 1px solid rgba(72, 187, 255, 0.2);
+        transition: all 0.2s ease;
+      }
+
+      .section {
+        max-width: 1280px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+      }
+
+      .section-head {
+        margin-bottom: 2.5rem;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+        color: #6c9eff;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #fff, #8bb9fe);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* header & nav */
+      .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+      .brand {
+        font-size: 2rem;
+        font-weight: 800;
+        font-family: 'Orbitron', monospace;
+        background: linear-gradient(145deg, #fff, #5aa9ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-decoration: none;
+      }
+      .site-nav {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .site-nav a {
+        color: #ccdeff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.2s;
+      }
+      .site-nav a:hover {
+        color: white;
+        text-shadow: 0 0 5px #5aa9ff;
+      }
+
+      /* hero */
+      .hero-section {
+        margin-top: 2rem;
+      }
+      .hero-content {
+        padding: 2rem;
+      }
+      .hero-layout {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .hero-copy {
+        flex: 2;
+      }
+      h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+      .typed-name {
+        background: linear-gradient(145deg, #fff, #81b1ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+      }
+      .hero-summary {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        color: #b9ceff;
+      }
+      .hero-metrics {
+        display: flex;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+      .metric {
+        padding: 0.6rem 1.2rem;
+        border-radius: 2rem;
+        text-align: center;
+        background: rgba(25, 40, 65, 0.6);
+      }
+      .metric-value {
+        font-weight: 800;
+        font-size: 1.5rem;
+        display: block;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.7rem 1.6rem;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.2s;
+        margin-right: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+      .btn-primary {
+        background: #1e4f8a;
+        color: white;
+        box-shadow: 0 2px 8px #1e4f8a40;
+      }
+      .btn-primary:hover {
+        background: #2a6cb0;
+        transform: translateY(-2px);
+      }
+      .btn-secondary {
+        border: 1px solid #5aa9ff;
+        color: #cae0ff;
+      }
+      .hero-photo-frame {
+        flex: 1;
+        min-width: 180px;
+        text-align: center;
+      }
+      .hero-photo {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #5aa9ff;
+        box-shadow: 0 0 20px #2a6cb080;
+      }
+      .scroll-indicator {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 2rem auto 0;
+        background: none;
+        border: none;
+        color: #ccc;
+        cursor: pointer;
+      }
+
+      /* grids */
+      .skills-grid, .projects-grid, .reveal-grid, .timeline-grid, .awards-grid, .completion-grid, .os-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.8rem;
+      }
+      .skill-card, .project-card, .reveal-card, .timeline-card, .award-card, .completion-card, .tool-card {
+        padding: 1.5rem;
+        border-radius: 1.6rem;
+        transition: 0.2s;
+      }
+      .skill-card i, .tool-icon-fallback {
+        font-size: 2.8rem;
+      }
+      .skill-card h3 {
+        margin: 0.8rem 0 0.5rem;
+      }
+      .tool-logo-wrap img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+      }
+      .project-number {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #8db5ff;
+      }
+      .tech-list {
+        display: flex;
+        gap: 0.8rem;
+        margin: 1rem 0;
+        list-style: none;
+      }
+      .tech-list i {
+        font-size: 1.8rem;
+      }
+      .card-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .btn-small {
+        padding: 0.3rem 1rem;
+        font-size: 0.8rem;
+        background: #1f2a44;
+        color: white;
+        border-radius: 2rem;
+      }
+      .text-link {
+        color: #7eaeff;
+        text-decoration: none;
+      }
+      .contact-card {
+        padding: 2rem;
+      }
+      .contact-list {
+        list-style: none;
+        margin: 1rem 0;
+      }
+      .contact-list li {
+        margin: 0.6rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .social-links a {
+        color: #cae0ff;
+        text-decoration: none;
+      }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.8rem;
+        border-top: 1px solid #1f2a44;
+        margin-top: 2rem;
+      }
+      @media (max-width: 760px) {
+        .section {
+          padding: 0 1rem;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        .hero-layout {
+          flex-direction: column-reverse;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="bg-orb orb-a" aria-hidden="true"></div>
@@ -74,13 +385,12 @@
     <div class="bg-grid" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#hero">GN</a>
+      <a class="brand" href="#hero">FB</a>
       <nav class="site-nav" aria-label="Primary Navigation">
         <a href="#skills">Skills</a>
-        <a href="#tools">Tools</a>
         <a href="#projects">Projects</a>
-        <a href="#highlights">Highlights</a>
-        <a href="#completion">Completion</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -91,54 +401,39 @@
           <div class="hero-layout">
             <div class="hero-copy">
               <h1>
-                <span class="hero-line">Hello, I am</span>
-                <span id="typed-name" class="typed-name" aria-live="polite">Faizan Ahamad Bhat</span>
+                <span class="hero-line">Hello, I am</span><br/>
+                <span id="typed-name" class="typed-name">Faizan Ahamad Bhat</span>
               </h1>
               <p class="hero-summary">
-                Engineering student in CSE (AI & ML) focused on DSA, problem solving, and software development.
+                B.E. CSE (AI & ML) student | Problem Solver | Python, Java, C, MySQL enthusiast. 
+                Passionate about building intelligent systems and solving real-world challenges.
               </p>
               <div class="hero-metrics">
                 <div class="metric glass-card">
-                  <span class="metric-value">Top 7%</span>
-                  <span class="metric-label">TryHackMe</span>
+                  <span class="metric-value">Python • Java • C</span>
+                  <span class="metric-label">Core Stack</span>
                 </div>
                 <div class="metric glass-card">
-                  <span class="metric-value">61</span>
-                  <span class="metric-label">LeetCode Solved</span>
-                </div>
-                <div class="metric glass-card">
-                  <span class="metric-value">70%</span>
-                  <span class="metric-label">Scan Time Reduced</span>
+                  <span class="metric-value">500+</span>
+                  <span class="metric-label">CodeChef Practice</span>
                 </div>
               </div>
               <div class="hero-actions">
                 <a class="btn btn-primary" href="#projects">View Projects</a>
-                <a
-                  class="btn btn-secondary"
-                  href="mailto:faizan.ahmad.bhat@example.com"
-                  >Contact Me</a
-                
+                <a class="btn btn-secondary" href="mailto:faizan.ahmad@example.com">Contact Me</a>
               </div>
             </div>
-
             <figure class="hero-photo-frame">
               <img
-                src="images/profile/ganesh-naidu.jpg"
-                alt="Paladugu Ganesh Naidu cybersecurity student and aspiring offensive security professional"
+                src="https://placehold.co/400x400/1e2a4a/white?text=Faizan"
+                alt="Faizan Ahamad Bhat CSE(AI & ML)"
                 class="hero-photo"
                 loading="eager"
-                decoding="async"
               />
             </figure>
           </div>
         </div>
-
-        <button
-          id="scroll-indicator"
-          class="scroll-indicator"
-          type="button"
-          aria-label="Scroll to skills section"
-        >
+        <button id="scroll-indicator" class="scroll-indicator" type="button" aria-label="Scroll down">
           <span>Scroll</span>
           <i class="fa-solid fa-angles-down" aria-hidden="true"></i>
         </button>
@@ -149,274 +444,31 @@
           <p class="eyebrow">Technical Stack</p>
           <h2>Core Skills</h2>
         </div>
-
         <div class="skills-grid">
-          <article
-            class="glass-card skill-card"
-            tabindex="0"
-            data-tooltip="Systems-level programming for security tools"
-          >
-            <i class="devicon-c-plain colored" aria-hidden="true"></i>
-            <h3>C</h3>
-            <p>Performance-first tooling and concurrency work.</p>
-            <div class="skill-extra">
-                <p>
-                Started with C as a foundation, built low-level projects, and practiced data structures and algorithms.
-                </p>
-            </div>
-          </article>
-
-          <article
-            class="glass-card skill-card"
-            tabindex="0"
-            data-tooltip="Core OOP and DSA practice"
-          >
-            <i class="devicon-java-plain colored" aria-hidden="true"></i>
-            <h3>Java</h3>
-                <p>Focused on Java, object-oriented design, and DSA problem solving.</p>
-            <div class="skill-extra">
-              <p>
-                Applied Java for structured logic, class design, and DSA
-                practice that improves implementation discipline.
-              </p>
-            </div>
-          </article>
-
-          <article
-            class="glass-card skill-card"
-            tabindex="0"
-            data-tooltip="Automation scripts and rapid prototyping"
-          >
+          <article class="glass-card skill-card">
             <i class="devicon-python-plain colored" aria-hidden="true"></i>
             <h3>Python</h3>
-            <p>Automation and scripting support for security workflows.</p>
-            <div class="skill-extra">
-                <p>
-                Used for scripting, automation, and algorithm implementation.
-                </p>
-            </div>
+            <p>Scripting, automation, and AI/ML model prototyping.</p>
           </article>
-
-          <article
-            class="glass-card skill-card"
-            tabindex="0"
-            data-tooltip="Query design and data extraction with MySQL"
-          >
+          <article class="glass-card skill-card">
+            <i class="devicon-java-plain colored" aria-hidden="true"></i>
+            <h3>Java</h3>
+            <p>OOP, DSA, and backend fundamentals. Built tower of hanoi game with logic design.</p>
+          </article>
+          <article class="glass-card skill-card">
+            <i class="devicon-c-plain colored" aria-hidden="true"></i>
+            <h3>C</h3>
+            <p>Memory management, data structures, algorithm optimization.</p>
+          </article>
+          <article class="glass-card skill-card">
             <i class="devicon-mysql-plain colored" aria-hidden="true"></i>
             <h3>MySQL</h3>
-            <p>Relational analysis and database-driven reporting.</p>
-            <div class="skill-extra">
-                <p>
-                Wrote optimized queries for extraction, filtering, and result-driven reporting.
-                </p>
-            </div>
+            <p>Database design, optimized queries, reporting.</p>
           </article>
-
-          <article
-            class="glass-card skill-card"
-            tabindex="0"
-            data-tooltip="Node.js automation and recon scripts"
-          >
-            <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
-            <h3>JavaScript</h3>
-            <p>ReconX backend automation and workflow acceleration.</p>
-            <div class="skill-extra">
-              <p>
-                Currently diving deep into JavaScript to strengthen my cybersecurity skillset,
-                focusing on real-world attack surface understanding and automation.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="tools" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Offensive Usage</p>
-          <h2>Tools</h2>
-        </div>
-
-        <div class="skills-grid">
-          <article
-            class="glass-card skill-card tool-card"
-            tabindex="0"
-            data-tooltip="Web interception, request tampering, and vulnerability validation"
-          >
-            <div class="tool-logo-wrap" aria-hidden="true">
-              <img
-                class="tool-logo"
-                src="logos/cropped/burpsuite.jpg"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Burp Suite</h3>
-            <p>Primary toolkit for web security testing workflows.</p>
-            <div class="skill-extra">
-              <p>
-                Used for interception, repeater testing, and parameter-level
-                validation in web vulnerability assessments.
-              </p>
-            </div>
-          </article>
-
-          <article
-            class="glass-card skill-card tool-card"
-            tabindex="0"
-            data-tooltip="Exploit framework usage for controlled security testing"
-          >
-            <div class="tool-logo-wrap" aria-hidden="true">
-              <img
-                class="tool-logo"
-                src="logos/cropped/metasploit.jpg"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Metasploit</h3>
-            <p>Actively learning Metasploit for exploitation and validation.</p>
-            <div class="skill-extra">
-              <p>
-                Actively mastering Metasploit for exploit simulation and 
-                post-exploitation in lab environments.
-              </p>
-            </div>
-          </article>
-
-          <article
-            class="glass-card skill-card tool-card"
-            tabindex="0"
-            data-tooltip="Host discovery, service enumeration, and scan profiling"
-          >
-            <div class="tool-logo-wrap" aria-hidden="true">
-              <img
-                class="tool-logo"
-                src="logos/cropped/nmap.jpg"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Nmap</h3>
-            <p>Network mapping and vulnerability-focused enumeration.</p>
-            <div class="skill-extra">
-              <p>
-                Used Nmap effectively to understand network fundamentals 
-                and reconnaissance techniques
-              </p>
-            </div>
-          </article>
-
-          <article
-            class="glass-card skill-card tool-card"
-            tabindex="0"
-            data-tooltip="Directory and DNS brute-force style enumeration"
-          >
-            <div class="tool-logo-wrap" aria-hidden="true">
-              <img
-                class="tool-logo"
-                src="logos/cropped/Gobuster.jpg"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Gobuster</h3>
-            <p>Fast discovery of hidden paths and resources.</p>
-            <div class="skill-extra">
-              <p>
-                Used Gobuster for directory and endpoint enumeration to uncover hidden attack surfaces.
-              </p>
-            </div>
-          </article>
-
-          <article
-            class="glass-card skill-card tool-card"
-            tabindex="0"
-            data-tooltip="High-speed fuzzing for endpoints, params, and content discovery"
-          >
-            <div class="tool-logo-wrap" aria-hidden="true">
-              <img
-                class="tool-logo"
-                src="logos/cropped/fuzz.jpg"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>FFUF</h3>
-            <p>Rapid fuzzing to accelerate reconnaissance coverage.</p>
-            <div class="skill-extra">
-              <p>
-                Used FFUF for high-speed endpoint and parameter 
-                fuzzing to uncover hidden attack surfaces.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <h3 class="tools-subhead">Operating Systems</h3>
-        <p class="tools-subtext">
-          Comfortable usage across Kali Linux, Ubuntu, and Windows.
-        </p>
-
-        <div class="os-grid">
-          <article
-            class="glass-card skill-card tool-card"
-            tabindex="0"
-            data-tooltip="Primary offensive security environment"
-          >
-            <div class="tool-logo-wrap" aria-hidden="true">
-              <img
-                class="tool-logo"
-                src="logos/cropped/kali.jpg"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Kali Linux</h3>
-            <p>Preferred setup for penetration testing workflows.</p>
-            <div class="skill-extra">
-              <p>
-                Daily environment for offensive tooling, automation scripts,
-                and reproducible security labs.
-              </p>
-            </div>
-          </article>
-
-          <article
-            class="glass-card skill-card tool-card"
-            tabindex="0"
-            data-tooltip="Comfortable Linux environment for development and tooling"
-          >
-            <i class="devicon-ubuntu-plain colored tool-icon-fallback" aria-hidden="true"></i>
-            <h3>Ubuntu</h3>
-            <p>Reliable platform for scripts and lab environments.</p>
-            <div class="skill-extra">
-              <p>
-                Comfortable for development workflows, CLI tooling, and
-                lightweight virtual lab setups.
-              </p>
-            </div>
-          </article>
-
-          <article
-            class="glass-card skill-card tool-card"
-            tabindex="0"
-            data-tooltip="Comfortable usage for desktop, tooling, and compatibility checks"
-          >
-            <i class="fa-brands fa-windows tool-icon-fallback" aria-hidden="true"></i>
-            <h3>Windows</h3>
-            <p>Used for daily workflows and cross-platform testing.</p>
-            <div class="skill-extra">
-              <p>
-                Used for documentation, testing compatibility, and mixed
-                environment execution.
-              </p>
-            </div>
+          <article class="glass-card skill-card">
+            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+            <h3>Problem Solving</h3>
+            <p>Data Structures & Algorithms, LeetCode, CodeChef practice.</p>
           </article>
         </div>
       </section>
@@ -426,435 +478,214 @@
           <p class="eyebrow">Featured Build Work</p>
           <h2>Projects</h2>
         </div>
-
         <div class="projects-grid">
           <article class="glass-card project-card">
             <span class="project-number">01</span>
-            <h3>NmapAnalyzer</h3>
+            <h3>College Inquiry Chatbot</h3>
             <p>
-              C-based automation framework integrating Nmap and MySQL,
-              reducing scan time by 70% across 200+ hosts and cutting analysis
-              effort by 85%.
+              AI-powered assistant for college admissions, FAQs, and course details using Python (or integrated with NLP). Helps prospective students get instant replies.
             </p>
-            <ul class="tech-list" aria-label="Technologies used">
-              <li><i class="devicon-c-plain colored" aria-hidden="true"></i></li>
-              <li><i class="fa-solid fa-network-wired" aria-hidden="true"></i></li>
-              <li><i class="devicon-sqlite-plain colored" aria-hidden="true"></i></li>
+            <ul class="tech-list">
+              <li><i class="devicon-python-plain colored"></i></li>
+              <li><i class="fa-solid fa-robot"></i></li>
+              <li><i class="fa-solid fa-database"></i></li>
             </ul>
             <div class="card-actions">
-              <a
-                class="btn btn-small"
-                href="https://github.com/paladuguganeshnaidu/nmapanalyzer"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
+              <a class="btn btn-small" href="#">GitHub (Demo)</a>
             </div>
           </article>
-
           <article class="glass-card project-card">
             <span class="project-number">02</span>
-            <h3>ReconX</h3>
+            <h3>Tower of Hanoi Game</h3>
             <p>
-              Web reconnaissance automation tool using Node.js, FFUF, and
-              Gobuster that discovered 50+ hidden endpoints and reduced
-              reconnaissance time from 2 hours to 30 minutes.
+              prize winning on chat bot by own
             </p>
-            <ul class="tech-list" aria-label="Technologies used">
-              <li>
-                <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
-              </li>
-              <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i></li>
-              <li><i class="fa-solid fa-bolt" aria-hidden="true"></i></li>
+            <ul class="tech-list">
+              <li><i class="devicon-java-plain colored"></i></li>
+              <li><i class="fa-solid fa-cubes"></i></li>
             </ul>
             <div class="card-actions">
-              <a
-                class="btn btn-small"
-                href="https://github.com/paladuguganeshnaidu/ReconX"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
+              <a class="btn btn-small" href="#">Live Demo</a>
             </div>
           </article>
-
           <article class="glass-card project-card">
             <span class="project-number">03</span>
-            <h3>ToriiWeb Vulnerability Disclosure</h3>
+            <h3>CodeChef 500+ Practice Tracker</h3>
             <p>
-              Identified and responsibly reported a real-world vulnerability in
-              ToriiWeb, demonstrating practical exploitation analysis and
-              security reporting discipline.
+              Solved 500+ difficulty-rated problems on CodeChef, sharpening algorithmic thinking. Certificate of completion earned.
             </p>
-            <ul class="tech-list" aria-label="Technologies used">
-              <li><i class="fa-solid fa-bug" aria-hidden="true"></i></li>
-              <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></li>
-              <li><i class="fa-solid fa-file-shield" aria-hidden="true"></i></li>
+            <ul class="tech-list">
+              <li><i class="fa-solid fa-code"></i></li>
+              <li><i class="fa-solid fa-chart-line"></i></li>
             </ul>
-            <div class="card-actions">
-              <a
-                class="btn btn-small"
-                href="mailto:paladuguganeshnaidu@gmail.com?subject=ToriiWeb%20Report%20Request"
-                >Request Report</a
-              >
-            </div>
-          </article>
-
-          <article class="glass-card project-card">
-            <span class="project-number">04</span>
-            <h3>Algorithm and SQL Practice Track</h3>
-            <p>
-              Built consistent problem-solving depth through 61 LeetCode
-              solutions in C, MySQL, and Java, including streak-based practice
-              and contest participation.
-            </p>
-            <ul class="tech-list" aria-label="Technologies used">
-              <li><i class="devicon-c-plain colored" aria-hidden="true"></i></li>
-              <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i></li>
-              <li><i class="devicon-java-plain colored" aria-hidden="true"></i></li>
-            </ul>
-            <div class="card-actions">
-              <a
-                class="btn btn-small"
-                href="https://leetcode.com/u/paladuguganeshnaidu"
-                target="_blank"
-                rel="noopener noreferrer"
-                >LeetCode</a
-              >
-              <a
-                class="btn btn-small"
-                href="https://github.com/paladuguganeshnaidu/my-programs"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </div>
           </article>
         </div>
       </section>
 
-      <section id="highlights" class="section">
+      <!-- Certificates section with uploaded docs info -->
+      <section id="certificates" class="section">
         <div class="section-head">
-          <p class="eyebrow">Hover to Reveal</p>
-          <h2>Security Journey Highlights</h2>
+          <p class="eyebrow">Recognition & Learning</p>
+          <h2>Certifications & Achievements</h2>
         </div>
-
-        <div class="reveal-grid">
-          <article class="glass-card reveal-card" tabindex="0">
-            <h3>Security Automation Builder</h3>
-            <p class="reveal-summary">
-              I focus on building tooling that makes repeated security tasks
-              faster and more reliable.
-            </p>
-            <div class="reveal-body">
-              <p>
-                From NmapAnalyzer in C to ReconX in Node.js, my approach is to
-                convert manual, error-prone reconnaissance into measurable,
-                scriptable workflows.
-              </p>
-            </div>
+        <div class="completion-grid">
+          <article class="glass-card completion-card">
+            <div class="completion-badge-wrap"><i class="fa-brands fa-redhat" style="font-size: 3rem; color:#cc3b2e;"></i></div>
+            <h3>Red Hat: Java EE Development</h3>
+            <p>Red Hat Application Development I (AD183) - 32 Credit Hours | April 2026</p>
           </article>
-
-          <article class="glass-card reveal-card" tabindex="0">
-            <h3>Hands-on Offensive Learner</h3>
-            <p class="reveal-summary">
-              Practical labs and real systems are my main way to grow in
-              offensive security.
-            </p>
-            <div class="reveal-body">
-              <p>
-                I am ranked in the top 7% on TryHackMe and use challenge-based
-                environments to sharpen enumeration, vulnerability validation,
-                and attack path thinking.
-              </p>
-            </div>
+          <article class="glass-card completion-card">
+            <div class="completion-badge-wrap"><i class="fa-solid fa-code" style="font-size: 3rem; color:#1f7a5a;"></i></div>
+            <h3>CodeChef 500 Difficulty Badge</h3>
+            <p>Completed all practice problems of 500 rating | April 2026</p>
           </article>
-
-          <article class="glass-card reveal-card" tabindex="0">
-            <h3>Consistent Problem Solver</h3>
-            <p class="reveal-summary">
-              Algorithmic and database problem solving supports my security
-              mindset.
-            </p>
-            <div class="reveal-body">
-              <p>
-                LeetCode practice in C, SQL, and Java helps me reason about edge
-                cases, optimize logic, and write cleaner automation under
-                constraints.
-              </p>
-            </div>
+          <article class="glass-card completion-card">
+            <div class="completion-badge-wrap"><i class="fa-brands fa-oracle" style="font-size: 3rem; color:#e74c3c;"></i></div>
+            <h3>Oracle Java Fundamentals</h3>
+            <p>Award of Completion - Java Fundamentals (English) | April 2026</p>
+          </article>
+          <article class="glass-card completion-card">
+            <div class="completion-badge-wrap"><i class="fa-brands fa-oracle" style="font-size: 3rem; color:#f39c12;"></i></div>
+            <h3>Oracle Certified Foundations Associate</h3>
+            <p>OCI 2025 AI Foundations Associate | Valid till Nov 2027</p>
+          </article>
+          <article class="glass-card completion-card">
+            <div class="completion-badge-wrap"><i class="fa-solid fa-trophy" style="font-size: 3rem; color:gold;"></i></div>
+            <h3>🏆 College Prize - Tower of Hanoi</h3>
+            <p>Winner in project competition for innovative Java game implementation</p>
           </article>
         </div>
       </section>
 
       <section id="education" class="section">
         <div class="section-head">
-          <p class="eyebrow">Academic Track</p>
-          <h2>Education Timeline</h2>
+          <p class="eyebrow">Academic Journey</p>
+          <h2>Education & Branch</h2>
         </div>
-
         <div class="timeline-grid">
           <article class="glass-card timeline-card">
-            <h3>B.E. Computer Science</h3>
-            <p>Nagarjuna College of Engineering and Technology (VTU, AICTE)</p>
-            <p>Sep 2024 - Aug 2028</p>
-            <p>CGPA: 6.7</p>
+            <h3>B.E. Computer Science (AI & ML)</h3>
+            <p>Nagarjuna College of Engineering and Technology (VTU), Bengaluru, Karnataka</p>
+            <p>2024 – 2028</p>
+            <p><strong>Branch:</strong> Artificial Intelligence & Machine Learning</p>
           </article>
           <article class="glass-card timeline-card">
-            <h3>Intermediate (MPC)</h3>
-            <p>Narayana Junior College, Anantapur</p>
-            <p>Sep 2022 - Mar 2024</p>
-            <p>Score: 74%</p>
+            <h3>Higher Secondary Education</h3>
+            <p>Jammu & Kashmir Board, Anantnag, Verinag</p>
+            <p>Completed with distinction</p>
           </article>
+        </div>
+        <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+          <div class="glass-card" style="padding: 1rem 2rem; text-align: center;">
+            <i class="fa-solid fa-location-dot"></i> <strong>Primary Address:</strong> Bengaluru, Karnataka
+          </div>
+          <div class="glass-card" style="padding: 1rem 2rem; text-align: center;">
+            <i class="fa-solid fa-house-chimney"></i> <strong>Alternate Address:</strong> Anantnag, Verinag, Jammu & Kashmir
+          </div>
         </div>
       </section>
 
-      <section id="achievements" class="section">
+      <section id="highlights" class="section">
         <div class="section-head">
-          <p class="eyebrow">Recognition</p>
-          <h2>Achievements and Certifications</h2>
+          <p class="eyebrow">Beyond Curriculum</p>
+          <h2>Journey Highlights</h2>
         </div>
-
-        <div class="awards-grid">
-          <article class="glass-card award-card">
-            <h3>TryHackMe Top 7%</h3>
-            <p>
-              Ranked among top learners through hands-on offensive security
-              practice.
-            </p>
-            <a
-              class="text-link"
-              href="https://tryhackme.com/p/paladuguganeshnaidu"
-              target="_blank"
-              rel="noopener noreferrer"
-              >View Profile</a
-            >
+        <div class="reveal-grid">
+          <article class="glass-card reveal-card">
+            <h3>Prize-winning Project</h3>
+            <p>Received college award for 'Tower of Hanoi' game – recognized for creative logic and Java implementation.</p>
           </article>
-
-          <article class="glass-card award-card">
-            <h3>Cisco Ethical Hacker</h3>
-            <p>
-              Formal certification by cisco validating ethical hacking fundamentals and
-              practical security concepts.
-            </p>
-            <a
-              class="text-link"
-              href="https://www.credly.com/badges/921b523f-5da0-4b22-aaec-1277e93bfca8/public_url"
-              target="_blank"
-              rel="noopener noreferrer"
-              >View Badge</a
-            >
+          <article class="glass-card reveal-card">
+            <h3>Consistent Problem Solver</h3>
+            <p>CodeChef 500 difficulty badge & Oracle Java fundamentals – strong foundation in DSA and clean code.</p>
           </article>
-
-          <article class="glass-card award-card">
-            <h3>Real-World Vulnerability Report</h3>
-            <p>
-              Reported a real vulnerability in Torii portal with responsible
-              disclosure and structured documentation.
-            </p>
-            <a
-              class="text-link"
-              href="mailto:paladuguganeshnaidu@gmail.com?subject=Vulnerability%20Report%20Discussion"
-              >Discuss Details</a
-            >
+          <article class="glass-card reveal-card">
+            <h3>AI/ML Enthusiast</h3>
+            <p>Oracle Cloud Infrastructure AI Foundations certified. Working on college inquiry chatbot using LLM integration.</p>
           </article>
-          <article class="glass-card award-card">
-            <h3>Internz Learn Training</h3>
-            <p>
-              Completed cybersecurity internship projects, demonstrated dedication and enthusiasm.
-            </p>
-            <a
-              class="text-link"
-              href="https://drive.google.com/drive/folders/1xi0fnEaLVbtPyT_BBmonaWBrZuUHBq3N?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              >View Details</a
-            >
-          </article>
-
         </div>
       </section>
 
+      <!-- Completion section for extra badge display -->
       <section id="completion" class="section">
         <div class="section-head">
-          <p class="eyebrow">Completion and Achievements</p>
-          <h2>Course Completions and Badges</h2>
+          <p class="eyebrow">Credential showcase</p>
+          <h2>Milestone Certificates</h2>
         </div>
-
         <div class="completion-grid">
           <article class="glass-card completion-card">
-            <div class="completion-badge-wrap" aria-hidden="true">
-              <img
-                class="completion-badge"
-                src="logos/certifications/cisco-c-essentials-1.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>C Essentials 1</h3>
-            <p class="completion-issuer">Cisco Networking Academy</p>
+            <i class="fa-brands fa-java" style="font-size: 2.5rem; color:#5382a1;"></i>
+            <h3>Red Hat Java EE</h3>
+            <p>Certificate of attendance: 32 credit hours | Apr 2026</p>
           </article>
-
           <article class="glass-card completion-card">
-            <div class="completion-badge-wrap" aria-hidden="true">
-              <img
-                class="completion-badge"
-                src="logos/certifications/mongodb-crud-operations.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>CRUD Operations</h3>
-            <p class="completion-issuer">MongoDB</p>
+            <i class="fa-solid fa-laptop-code" style="font-size: 2.5rem;"></i>
+            <h3>CodeChef 500 Rated</h3>
+            <p>Completed all practice problems – Certificate by CodeChef</p>
           </article>
-
           <article class="glass-card completion-card">
-            <div class="completion-badge-wrap" aria-hidden="true">
-              <img
-                class="completion-badge"
-                src="logos/certifications/ibm-cybersecurity-fundamentals.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Cybersecurity Fundamentals</h3>
-            <p class="completion-issuer">IBM SkillsBuild</p>
+            <i class="fa-brands fa-oracle" style="font-size: 2.5rem;"></i>
+            <h3>Oracle Java Fundamentals</h3>
+            <p>Award of Completion – Coursework satisfactory (Apr 2026)</p>
           </article>
-
           <article class="glass-card completion-card">
-            <div class="completion-badge-wrap" aria-hidden="true">
-              <img
-                class="completion-badge"
-                src="logos/certifications/cisco-ethical-hacker.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Ethical Hacker</h3>
-            <p class="completion-issuer">Cisco Networking Academy</p>
-          </article>
-
-          <article class="glass-card completion-card">
-            <div class="completion-badge-wrap" aria-hidden="true">
-              <img
-                class="completion-badge"
-                src="logos/certifications/cisco-introduction-to-cybersecurity.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Introduction to Cybersecurity</h3>
-            <p class="completion-issuer">Cisco Networking Academy</p>
-          </article>
-
-          <article class="glass-card completion-card">
-            <div class="completion-badge-wrap" aria-hidden="true">
-              <img
-                class="completion-badge"
-                src="logos/certifications/isc2-candidate.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Candidate</h3>
-            <p class="completion-issuer">ISC2</p>
-          </article>
-
-          <article class="glass-card completion-card">
-            <div class="completion-badge-wrap" aria-hidden="true">
-              <img
-                class="completion-badge"
-                src="logos/certifications/redhat-python-programming.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Python Programming with Red Hat</h3>
-            <p class="completion-issuer">Red Hat Academy</p>
-          </article>
-
-          <article class="glass-card completion-card">
-            <div class="completion-badge-wrap" aria-hidden="true">
-              <img
-                class="completion-badge"
-                src="logos/certifications/redhat-getting-started-linux.png"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <h3>Red Hat Training: Getting Started with Linux</h3>
-            <p class="completion-issuer">Red Hat Academy</p>
+            <i class="fa-solid fa-cloud" style="font-size: 2rem;"></i>
+            <h3>Oracle AI Foundations Associate</h3>
+            <p>OCI 2025 Certified – Valid until Nov 2027</p>
           </article>
         </div>
       </section>
 
       <section id="contact" class="section contact-section">
         <div class="glass-card contact-card">
-          <p class="eyebrow">Contact</p>
-          <h2>Open to Security Internships and Collaborations</h2>
+          <p class="eyebrow">Connect</p>
+          <h2>Get in touch for AI/ML opportunities</h2>
           <p>
-            I am actively building practical offensive security skills and
-            security automation systems. Reach out for internships, project
-            collaboration, or security-focused opportunities.
+            Passionate about building real-world solutions — from college chatbots to classic puzzle games. 
+            Open to internships, collaborative projects, and tech roles.
           </p>
-          <ul class="contact-list" aria-label="Contact information">
-            <li>
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-              <a href="mailto:paladuguganeshnaidu@gmail.com"
-                >paladuguganeshnaidu@gmail.com</a
-              >
-            </li>
-            <li>
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <a href="tel:+917815872759">+91 7815872759</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-              <span>India (Anantapur / Bengaluru area)</span>
-            </li>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:faizan.ahmad.bhat@portfolio.com">faizan.ahmad.bhat@portfolio.com</a></li>
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+916006525161">+91 6006525161</a></li>
+            <li><i class="fa-solid fa-location-dot"></i> <span>Bengaluru, Karnataka | Alternate: Anantnag, Verinag (J&K)</span></li>
           </ul>
-
-          <div class="social-links" aria-label="Professional links">
-            <a href="https://github.com/paladuguganeshnaidu" target="_blank" rel="noopener noreferrer"
-              ><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a
-            >
-            <a
-              href="https://linkedin.com/in/paladuguganeshnaidu"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a
-            >
-            <a
-              href="https://tryhackme.com/p/paladuguganeshnaidu"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-solid fa-user-secret" aria-hidden="true"></i> TryHackMe</a
-            >
-            <a
-              href="https://leetcode.com/u/paladuguganeshnaidu"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fa-solid fa-code" aria-hidden="true"></i> LeetCode</a
-            >
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-github"></i> GitHub/faizan-ai</a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn/faizanahamad</a>
+            <a href="#"><i class="fa-solid fa-code"></i> CodeChef/faizan_bhat</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>
-        <span id="year"></span> Paladugu Ganesh Naidu - Built for security-focused opportunities.
-      </p>
+      <p>© <span id="year"></span> Faizan Ahamad Bhat — AI & ML Portfolio | B.E. CSE, Bengaluru | All achievements showcased.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+      // dynamic year
+      document.getElementById('year').innerText = new Date().getFullYear();
+      // scroll button behaviour
+      const scrollBtn = document.getElementById('scroll-indicator');
+      if(scrollBtn) {
+        scrollBtn.addEventListener('click', () => {
+          document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+      // name typing effect simplified
+      const nameSpan = document.getElementById('typed-name');
+      if(nameSpan) {
+        const fullName = "Faizan Ahamad Bhat";
+        let idx = 0;
+        function typeWriter() {
+          if(idx < fullName.length) {
+            nameSpan.innerHTML = fullName.slice(0, idx+1);
+            idx++;
+            setTimeout(typeWriter, 80);
+          }
+        }
+        typeWriter();
+      }
+    </script>
   </body>
 </html>
