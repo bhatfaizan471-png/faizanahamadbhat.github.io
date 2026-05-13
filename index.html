@@ -94,11 +94,14 @@
         backdrop-filter: blur(14px);
         border-radius: 2rem;
         border: 1px solid rgba(80, 160, 255, 0.25);
-        transition: all 0.3s ease;
+        transition: transform 0.25s cubic-bezier(.2,.9,.3,1), box-shadow 0.25s ease, border-color 0.25s ease;
+        will-change: transform, box-shadow;
+        transform: perspective(800px) translateZ(0);
+        cursor: pointer;
       }
       .glass-card:hover {
         border-color: rgba(80, 160, 255, 0.5);
-        box-shadow: 0 10px 30px -10px rgba(0, 100, 255, 0.2);
+        box-shadow: 0 16px 40px -12px rgba(30, 90, 255, 0.25);
       }
 
       .section {
@@ -675,11 +678,52 @@
         });
       }
 
+      // ===== CARD TILT INTERACTION =====
+      function setupCardTilt() {
+        const cards = document.querySelectorAll('.glass-card');
+        if (!cards.length) return;
+
+        cards.forEach(card => {
+          let rafId = null;
+
+          function handleMove(e) {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width; // 0..1
+            const y = (e.clientY - rect.top) / rect.height; // 0..1
+            const nx = (x - 0.5) * 2; // -1..1
+            const ny = (y - 0.5) * 2; // -1..1
+            const rotY = nx * 6; // deg
+            const rotX = -ny * 6; // deg
+            const hoverLift = -8; // px
+
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              card.style.transform = `perspective(800px) translateZ(0) translateY(${hoverLift}px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.01)`;
+            });
+          }
+
+          function handleEnter() {
+            card.style.transition = 'transform 0.15s cubic-bezier(.2,.9,.3,1)';
+          }
+
+          function handleLeave() {
+            if (rafId) cancelAnimationFrame(rafId);
+            card.style.transform = '';
+            card.style.transition = 'transform 0.35s cubic-bezier(.2,.9,.3,1)';
+          }
+
+          card.addEventListener('mousemove', handleMove);
+          card.addEventListener('mouseenter', handleEnter);
+          card.addEventListener('mouseleave', handleLeave);
+        });
+      }
+
       // ===== INITIALIZE =====
       function init() {
         runTypewriter();
         setupScrollIndicator();
         setupKeyboardRevealCards();
+        setupCardTilt();
         setupCurrentYear();
         setupSmoothScroll();
       }
