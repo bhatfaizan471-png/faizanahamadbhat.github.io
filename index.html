@@ -52,24 +52,53 @@
         margin: 0;
         min-height: 100vh;
         color: var(--text);
-        background:
-          radial-gradient(circle at 16% 14%, rgba(89, 145, 255, 0.22), transparent 34%),
-          radial-gradient(circle at 86% 8%, rgba(38, 198, 177, 0.15), transparent 28%),
-          radial-gradient(circle at 50% 85%, rgba(125, 123, 255, 0.13), transparent 36%),
-          linear-gradient(180deg, #040810, #071325 44%, #0a182b);
+        /* Darker, uniform background without bright center spots */
+        background: linear-gradient(180deg, #030615, #04101a);
         font-family: "Inter", "Segoe UI", sans-serif;
         overflow-x: hidden;
       }
 
+      /* Remove the moving spotlight so background stays uniform */
       body::after {
         content: "";
         position: fixed;
         inset: 0;
         pointer-events: none;
         z-index: 1;
-        background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 20%), rgba(103, 215, 255, 0.16), transparent 26%);
+        background: none;
         transition: opacity 220ms var(--ease);
-        opacity: var(--mouse-opacity, 1);
+        opacity: 0;
+      }
+
+      /* Custom centered cursor (green ring + white dot) */
+      @media (pointer: fine) {
+        body { cursor: none; }
+        #customCursor {
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          border: 2px solid #39d0ae;
+          background: transparent;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+          z-index: 9999;
+          transition: transform 120ms var(--ease), opacity 160ms var(--ease);
+        }
+        #customCursor::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 8px;
+          height: 8px;
+          background: #ffffff;
+          border-radius: 50%;
+          box-shadow: 0 0 8px rgba(57,208,174,0.45);
+        }
       }
 
       body::before {
@@ -713,6 +742,23 @@
         transition: transform 180ms var(--ease);
       }
 
+      .project-visual .github-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: rgba(0,0,0,0.36);
+        border: 1px solid rgba(147,205,255,0.12);
+        color: #eaf4ff;
+        text-decoration: none;
+        transition: transform 150ms var(--ease), box-shadow 150ms var(--ease);
+      }
+      .project-visual .github-badge:hover { transform: translateY(-3px); box-shadow: var(--glow); border-color: var(--accent); }
+
       .project-visual:hover {
         transform: scale(1.02);
       }
@@ -1104,6 +1150,7 @@
     </style>
   </head>
   <body>
+    <div id="customCursor" aria-hidden="true"></div>
     <div class="orb orb-a" aria-hidden="true"></div>
     <div class="orb orb-b" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"><span id="scrollBar" class="scroll-progress-bar"></span></div>
@@ -1207,15 +1254,29 @@
         const prefersFinePointer = window.matchMedia("(pointer: fine)");
         if (!prefersFinePointer.matches) return;
 
+        const cursor = document.getElementById("customCursor");
+        if (!cursor) return;
+
         let frame = null;
         document.addEventListener("pointermove", (event) => {
           if (frame) return;
           frame = requestAnimationFrame(() => {
-            document.documentElement.style.setProperty("--mouse-x", `${event.clientX}px`);
-            document.documentElement.style.setProperty("--mouse-y", `${event.clientY}px`);
+            cursor.style.left = `${event.clientX}px`;
+            cursor.style.top = `${event.clientY}px`;
+            cursor.style.opacity = "1";
             frame = null;
           });
         }, { passive: true });
+
+        document.addEventListener("pointerdown", () => {
+          cursor.style.transform = "translate(-50%, -50%) scale(0.85)";
+        });
+        document.addEventListener("pointerup", () => {
+          cursor.style.transform = "translate(-50%, -50%) scale(1)";
+        });
+
+        document.addEventListener("pointerleave", () => { cursor.style.opacity = "0"; });
+        document.addEventListener("pointerenter", () => { cursor.style.opacity = "1"; });
       }
 
       function setupTiltEffects() {
@@ -1471,7 +1532,48 @@
           }
         });
       }
-      function init() { createStaggerIndex(); runTyping(); setYear(); setupNav(); setupSectionObserver(); setupScrollFx(); setupBackToTop(); setupRevealAnimations(); setupMouseGlow(); setupTiltEffects(); setupFloatingContact(); setupCertificateLoading(); setupEmailValidation(); setupContactForm(); if(resumeBtn) resumeBtn.addEventListener("click", downloadResumeTxt); setActiveNav("hero"); }
+      function updateHanoiCard() {
+        try {
+          const cards = Array.from(document.querySelectorAll('.card'));
+          const hanoiCard = cards.find(c => c.textContent && c.textContent.includes('Tower of Hanoi'));
+          if (!hanoiCard) return;
+
+          // Update description to Python
+          const p = hanoiCard.querySelector('p');
+          if (p) p.textContent = 'Python-based interactive puzzle that demonstrates recursion, algorithmic thinking, and structured user flow.';
+
+          // Replace Java chip with Python
+          const javaChip = hanoiCard.querySelector('.chip');
+          if (javaChip && javaChip.textContent.trim() === 'Java') javaChip.textContent = 'Python';
+
+          // Update GitHub link in actions
+          const actionLink = Array.from(hanoiCard.querySelectorAll('.proj-actions a')).find(a => a.textContent.trim().toLowerCase() === 'github');
+          if (actionLink) actionLink.href = 'https://github.com/bhatfaizan471-png/Tower_of_Honai_game';
+
+          // Add overlay github badge into visual
+          const visual = hanoiCard.querySelector('.project-visual');
+          if (visual && !visual.querySelector('.github-badge')) {
+            const a = document.createElement('a');
+            a.className = 'github-badge';
+            a.href = 'https://github.com/bhatfaizan471-png/Tower_of_Honai_game';
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.setAttribute('aria-label', 'Tower of Honai on GitHub');
+            a.innerHTML = '<i class="fa-brands fa-github"></i>';
+            visual.appendChild(a);
+          }
+        } catch (e) { /* silent */ }
+      }
+      function customDownloadResume() {
+        const resumeText = `Faizan Ahamad Bhat\nB.E. CSE (AI & ML) Student | Software Developer\n\nPrimary Address: Bengaluru, Karnataka\nAlternate Address: Anantnag, Verinag, Jammu & Kashmir\nEmail: bhatfaizan471@gmail.com\nPhone: +91 60065 25161\n\nSkills:\n- Python, Java, C\n- MySQL, MongoDB\n- Git, GitHub\n- Problem Solving (50+ LeetCode)\n- Kali Linux, Ubuntu, Windows\n\nProjects:\n1. College Inquiry Chatbot - Prize Winner (Python & NLP)\n2. Tower of Hanoi Game - Python recursion puzzle\n3. LeetCode 50+ Problem Solving\n\nCertificates:\n- Red Hat Java EE (AD183), 32 Credit Hours\n- Oracle Java Fundamentals\n- Oracle AI Foundations Associate\n- CodeChef 500 Difficulty\n- Python Programming with Red Hat\n- C Essentials 1 (Cisco)\n- IBM AI Literacy\n- MongoDB CRUD Operations`;
+        const blob = new Blob([resumeText], { type: "text/plain" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "Faizan_Ahamad_Bhat_Resume.txt";
+        link.click();
+        link.remove();
+      }
+      function init() { createStaggerIndex(); runTyping(); setYear(); setupNav(); setupSectionObserver(); setupScrollFx(); setupBackToTop(); setupRevealAnimations(); setupMouseGlow(); setupTiltEffects(); setupFloatingContact(); setupCertificateLoading(); setupEmailValidation(); setupContactForm(); updateHanoiCard(); if(resumeBtn) resumeBtn.addEventListener("click", customDownloadResume); setActiveNav("hero"); }
       if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
     </script>
   </body>

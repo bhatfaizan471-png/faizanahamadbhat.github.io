@@ -16,7 +16,7 @@ const fullName = "Faizan Ahamad Bhat";
 
 // ========== RESUME CONTENT ==========
 const resumeText = `Faizan Ahamad Bhat
-B.E. CSE (AI & ML) Student | Full Stack Developer
+B.E. CSE (AI & ML) Student | Software Developer
 
 Highlights
 - 50+ LeetCode problems solved
