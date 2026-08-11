@@ -411,6 +411,32 @@
 
       .hero-title {
         margin-top: 0.2rem;
+        white-space: pre-wrap;
+      }
+
+      .hero-title-char {
+        display: inline-block;
+        opacity: 0;
+        transform: translate3d(0, 0.22em, 0);
+        filter: blur(4px);
+        text-shadow: 0 0 0 rgba(103, 215, 255, 0);
+        transition:
+          opacity 180ms var(--ease),
+          transform 180ms var(--ease),
+          filter 180ms var(--ease),
+          text-shadow 180ms var(--ease);
+        will-change: opacity, transform, filter, text-shadow;
+      }
+
+      .hero-title-char.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        filter: blur(0);
+        text-shadow: 0 0 10px rgba(103, 215, 255, 0.12);
+      }
+
+      .hero-title-space {
+        white-space: pre;
       }
 
       .hero-addresses {
@@ -1146,6 +1172,21 @@
           animation-duration: 0.01ms !important;
           transition-duration: 0.01ms !important;
         }
+
+        .hero-title-char {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+          text-shadow: none !important;
+          transition: none !important;
+        }
+
+        .hero-title {
+          animation: none !important;
+          transform: none !important;
+          filter: none !important;
+          text-shadow: none !important;
+        }
       }
     </style>
   </head>
@@ -1225,7 +1266,6 @@
 
     <script>
       const fullName = "Faizan Ahamad Bhat";
-      const typedNameEl = document.getElementById("typedName");
       const navToggle = document.getElementById("navToggle");
       const siteHeader = document.getElementById("siteHeader");
       const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
@@ -1239,8 +1279,7 @@
       const formMsg = document.getElementById("formMsg");
       const emailInput = document.getElementById("email");
 
-      let typeIndex = 0;
-      let isWaiting = false;
+      let heroTitleTimer = null;
 
       function createStaggerIndex() {
         document.querySelectorAll(".stats, .chips").forEach((group) => {
@@ -1248,6 +1287,74 @@
             child.style.setProperty("--stagger-index", index);
           });
         });
+      }
+
+      function setupHeroTitleSequence() {
+        const heroTitle = document.querySelector(".hero-title");
+        if (!heroTitle) return;
+
+        const titleText = heroTitle.textContent || "";
+        heroTitle.setAttribute("aria-label", titleText);
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          heroTitle.textContent = titleText;
+          return;
+        }
+
+        heroTitle.textContent = "";
+
+        const characters = Array.from(titleText);
+        const nodes = characters.map((character) => {
+          if (character === " ") {
+            const space = document.createElement("span");
+            space.className = "hero-title-char hero-title-space is-visible";
+            space.setAttribute("aria-hidden", "true");
+            space.textContent = "\u00A0";
+            heroTitle.appendChild(space);
+            return { character: " ", node: space, visible: true };
+          }
+
+          const letter = document.createElement("span");
+          letter.className = "hero-title-char";
+          letter.setAttribute("aria-hidden", "true");
+          letter.textContent = character;
+          heroTitle.appendChild(letter);
+          return { character, node: letter, visible: false };
+        });
+
+        const visibleStepCount = nodes.filter((entry) => entry.character !== " ").length;
+        let step = 0;
+        let direction = 1;
+
+        const applyStep = () => {
+          let nonSpaceIndex = 0;
+          nodes.forEach((entry) => {
+            if (entry.character === " ") {
+              entry.node.classList.add("is-visible");
+              return;
+            }
+
+            const shouldBeVisible = nonSpaceIndex <= step;
+            entry.node.classList.toggle("is-visible", shouldBeVisible);
+            nonSpaceIndex += 1;
+          });
+        };
+
+        applyStep();
+
+        heroTitleTimer = window.setInterval(() => {
+          step += direction;
+
+          if (step >= visibleStepCount - 1) {
+            step = visibleStepCount - 1;
+            direction = -1;
+          } else if (step <= 0) {
+            step = 0;
+            direction = 1;
+          }
+
+          applyStep();
+        }, 165);
       }
 
       function setupMouseGlow() {
@@ -1452,18 +1559,6 @@
         updateEmailState();
       }
 
-      function runTyping() {
-        if (!typedNameEl || isWaiting) return;
-        if (typeIndex < fullName.length) {
-          typedNameEl.textContent = fullName.slice(0, typeIndex + 1);
-          typeIndex++;
-          setTimeout(runTyping, 90);
-        } else {
-          isWaiting = true;
-          setTimeout(() => { isWaiting = false; }, 2000);
-        }
-      }
-
       function setYear() { if (yearEl) yearEl.textContent = new Date().getFullYear(); }
       function toggleNav(open) {
         const shouldOpen = typeof open === "boolean" ? open : !siteHeader.classList.contains("open");
@@ -1573,7 +1668,7 @@
         link.click();
         link.remove();
       }
-      function init() { createStaggerIndex(); runTyping(); setYear(); setupNav(); setupSectionObserver(); setupScrollFx(); setupBackToTop(); setupRevealAnimations(); setupMouseGlow(); setupTiltEffects(); setupFloatingContact(); setupCertificateLoading(); setupEmailValidation(); setupContactForm(); updateHanoiCard(); if(resumeBtn) resumeBtn.addEventListener("click", customDownloadResume); setActiveNav("hero"); }
+      function init() { createStaggerIndex(); setupHeroTitleSequence(); setYear(); setupNav(); setupSectionObserver(); setupScrollFx(); setupBackToTop(); setupRevealAnimations(); setupMouseGlow(); setupTiltEffects(); setupFloatingContact(); setupCertificateLoading(); setupEmailValidation(); setupContactForm(); updateHanoiCard(); if(resumeBtn) resumeBtn.addEventListener("click", customDownloadResume); setActiveNav("hero"); }
       if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
     </script>
   </body>
