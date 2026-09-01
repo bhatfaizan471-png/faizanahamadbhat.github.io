@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tower of Hanoi Live Demo</title>
+    <style>
+      :root {
+        --bg: #07131f;
+        --panel: rgba(18, 34, 48, 0.88);
+        --panel-strong: rgba(12, 28, 38, 0.95);
+        --line: rgba(255, 255, 255, 0.12);
+        --primary: #74c0fc;
+        --accent: #ffd43b;
+        --text: #ebf3ff;
+        --muted: #b5c7d9;
+        --success: #7ae582;
+        --danger: #ff7676;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(116, 192, 252, 0.2), transparent 25%),
+          linear-gradient(135deg, #06121b 0%, #0b1e2c 100%);
+        color: var(--text);
+      }
+
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 32px 20px 50px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+
+      .brand {
+        font-size: clamp(1.4rem, 2vw, 2rem);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      button {
+        border: none;
+        border-radius: 12px;
+        padding: 10px 16px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: 0.2s ease;
+      }
+
+      .primary {
+        background: linear-gradient(135deg, var(--primary), #4dabf7);
+        color: #031827;
+      }
+
+      .secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text);
+        border: 1px solid var(--line);
+      }
+
+      button:hover { transform: translateY(-1px); }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(7, 18, 31, 0.38);
+        overflow: hidden;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(120px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .stat {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px 14px;
+      }
+
+      .stat-label {
+        display: block;
+        color: var(--muted);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .stat-value {
+        display: block;
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
+        font-weight: 700;
+        margin-top: 8px;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .arena {
+        position: relative;
+        min-height: 460px;
+        padding: 20px 18px 14px;
+        background: linear-gradient(180deg, rgba(10, 22, 32, 0.9), rgba(5, 14, 22, 0.93));
+      }
+
+      .base {
+        position: absolute;
+        bottom: 16px;
+        left: 3%;
+        width: 94%;
+        height: 24px;
+        background: linear-gradient(180deg, #7c8797, #485766);
+        border-radius: 12px;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+      }
+
+      .tower-area {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 24px;
+        height: 370px;
+        padding: 0 12px 28px;
+      }
+
+      .tower {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding-bottom: 18px;
+      }
+
+      .tower-rod {
+        position: absolute;
+        bottom: 0;
+        width: 14px;
+        height: 240px;
+        background: linear-gradient(180deg, #dfe9f5, #9aa9ba);
+        border-radius: 10px 10px 4px 4px;
+        box-shadow: 0 0 14px rgba(255,255,255,0.1);
+      }
+
+      .tower-rod::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        width: 200%;
+        height: 18px;
+        background: linear-gradient(180deg, #7b8798, #495767);
+        border-radius: 10px;
+      }
+
+      .disks {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 4px;
+        padding-bottom: 10px;
+      }
+
+      .disk {
+        position: relative;
+        height: 26px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.32);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 8px 18px rgba(0,0,0,0.25);
+        transition: transform 0.35s ease, left 0.35s ease;
+      }
+
+      .disk::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.02));
+        border-radius: inherit;
+      }
+
+      .disk-label {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: rgba(7, 18, 31, 0.8);
+      }
+
+      .tower-name {
+        position: absolute;
+        bottom: -26px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .sidebar {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 20px 18px;
+      }
+
+      .sidebar h2 {
+        margin: 0 0 14px;
+        font-size: 1.2rem;
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .input-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        accent-color: var(--primary);
+      }
+
+      .legend {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .status {
+        margin-top: 18px;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(116, 192, 252, 0.08);
+        color: var(--text);
+        min-height: 54px;
+      }
+
+      .status.success {
+        background: rgba(122, 229, 130, 0.08);
+        border-color: rgba(122, 229, 130, 0.35);
+      }
+
+      .status.error {
+        background: rgba(255, 118, 118, 0.08);
+        border-color: rgba(255, 118, 118, 0.35);
+      }
+
+      @media (max-width: 840px) {
+        .content { grid-template-columns: 1fr; }
+        .stats { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <div class="brand">Tower of Hanoi</div>
+        <div class="actions">
+          <button class="secondary" id="resetBtn" type="button">Reset</button>
+          <button class="primary" id="solveBtn" type="button">Solve</button>
+        </div>
+      </div>
+
+      <div class="stats panel">
+        <div class="stat">
+          <span class="stat-label">Disks</span>
+          <span class="stat-value" id="diskCount">4</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Moves</span>
+          <span class="stat-value" id="moveCount">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Min moves</span>
+          <span class="stat-value" id="minMoves">15</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Status</span>
+          <span class="stat-value" id="statusShort">Ready</span>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="arena panel">
+          <div class="tower-area" id="towerArea">
+            <div class="tower" data-tower="0">
+              <div class="tower-rod"></div>
+              <div class="disks" id="tower-0"></div>
+              <div class="tower-name">A</div>
+            </div>
+            <div class="tower" data-tower="1">
+              <div class="tower-rod"></div>
+              <div class="disks" id="tower-1"></div>
+              <div class="tower-name">B</div>
+            </div>
+            <div class="tower" data-tower="2">
+              <div class="tower-rod"></div>
+              <div class="disks" id="tower-2"></div>
+              <div class="tower-name">C</div>
+            </div>
+          </div>
+          <div class="base"></div>
+        </div>
+
+        <aside class="sidebar">
+          <h2>Controls</h2>
+          <div class="controls">
+            <label for="diskSlider">Choose disk count</label>
+            <input id="diskSlider" type="range" min="3" max="7" value="4" />
+            <div class="input-group">
+              <button class="primary" id="autoPlayBtn" type="button">Auto-play</button>
+              <button class="secondary" id="resetBtnSmall" type="button">Reset</button>
+            </div>
+          </div>
+
+          <div class="status" id="statusMessage">Press “Solve” to watch the recursion animation.</div>
+
+          <div class="legend">
+            The Tower of Hanoi puzzle follows a recursive strategy: move n-1 disks to an auxiliary pole, move the largest disk, then move the remaining disks.
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      const diskSlider = document.getElementById('diskSlider');
+      const diskCountEl = document.getElementById('diskCount');
+      const moveCountEl = document.getElementById('moveCount');
+      const minMovesEl = document.getElementById('minMoves');
+      const statusShortEl = document.getElementById('statusShort');
+      const statusMessageEl = document.getElementById('statusMessage');
+      const moveBtn = document.getElementById('solveBtn');
+      const resetBtn = document.getElementById('resetBtn');
+      const resetBtnSmall = document.getElementById('resetBtnSmall');
+      const autoPlayBtn = document.getElementById('autoPlayBtn');
+      const towers = {
+        0: document.getElementById('tower-0'),
+        1: document.getElementById('tower-1'),
+        2: document.getElementById('tower-2')
+      };
+
+      let diskCount = Number(diskSlider.value);
+      let moves = 0;
+      let solving = false;
+      let moveQueue = [];
+      let timerId = null;
+
+      function colorForDisk(size) {
+        const palette = ['#74c0fc', '#ffd43b', '#a5d8ff', '#8ce99a', '#ff9f43', '#ff8787', '#c0eb75'];
+        return palette[(size - 1) % palette.length];
+      }
+
+      function getDiskWidth(size) {
+        const max = diskCount;
+        return 100 + (size * 18);
+      }
+
+      function buildInitialState() {
+        towers[0].innerHTML = '';
+        towers[1].innerHTML = '';
+        towers[2].innerHTML = '';
+
+        for (let i = diskCount; i >= 1; i -= 1) {
+          const disk = document.createElement('div');
+          disk.className = 'disk';
+          disk.style.width = `${getDiskWidth(i)}%`;
+          disk.style.background = `linear-gradient(135deg, ${colorForDisk(i)}, rgba(255,255,255,0.3))`;
+          disk.dataset.size = String(i);
+
+          const label = document.createElement('span');
+          label.className = 'disk-label';
+          label.textContent = i;
+          disk.appendChild(label);
+          towers[0].appendChild(disk);
+        }
+
+        moves = 0;
+        moveCountEl.textContent = '0';
+        statusShortEl.textContent = 'Ready';
+        statusMessageEl.textContent = 'Press “Solve” to watch the recursion animation.';
+        statusMessageEl.classList.remove('success', 'error');
+        moveQueue = [];
+        if (timerId) clearTimeout(timerId);
+        solving = false;
+      }
+
+      function minMovesFor(n) {
+        return 2 ** n - 1;
+      }
+
+      function updateSummary() {
+        diskCountEl.textContent = String(diskCount);
+        minMovesEl.textContent = String(minMovesFor(diskCount));
+        moveCountEl.textContent = String(moves);
+      }
+
+      function setStatus(message, type = '') {
+        statusMessageEl.textContent = message;
+        statusMessageEl.classList.remove('success', 'error');
+        if (type) statusMessageEl.classList.add(type);
+      }
+
+      function stateFromTowers() {
+        const result = { 0: [], 1: [], 2: [] };
+        Object.keys(towers).forEach((towerKey) => {
+          const tower = towers[towerKey];
+          Array.from(tower.children).forEach((disk) => {
+            result[towerKey].push(Number(disk.dataset.size));
+          });
+        });
+        return result;
+      }
+
+      function renderTowerState() {
+        const state = stateFromTowers();
+        Object.keys(towers).forEach((towerKey) => {
+          const tower = towers[towerKey];
+          tower.innerHTML = '';
+          state[towerKey].forEach((size) => {
+            const disk = document.createElement('div');
+            disk.className = 'disk';
+            disk.dataset.size = String(size);
+            disk.style.width = `${getDiskWidth(size)}%`;
+            disk.style.background = `linear-gradient(135deg, ${colorForDisk(size)}, rgba(255,255,255,0.3))`;
+            const label = document.createElement('span');
+            label.className = 'disk-label';
+            label.textContent = size;
+            disk.appendChild(label);
+            tower.appendChild(disk);
+          });
+        });
+      }
+
+      function moveDisk(from, to) {
+        const fromTower = towers[from];
+        const toTower = towers[to];
+
+        if (!fromTower || !toTower) return;
+        const sourceDisks = Array.from(fromTower.children);
+        const targetDisks = Array.from(toTower.children);
+
+        const disk = sourceDisks[sourceDisks.length - 1];
+        if (!disk) return;
+
+        fromTower.removeChild(disk);
+        toTower.appendChild(disk);
+        moves += 1;
+        moveCountEl.textContent = String(moves);
+
+        if (moves === minMovesFor(diskCount)) {
+          setStatus(`Completed in ${moves} moves — optimal solution found.`, 'success');
+          statusShortEl.textContent = 'Solved';
+        } else {
+          statusShortEl.textContent = 'Running';
+          setStatus(`Moved disk ${disk.dataset.size} from ${['A','B','C'][from]} to ${['A','B','C'][to]}.`);
+        }
+      }
+
+      function generateMoves(n, from, to, aux, steps) {
+        if (n === 1) {
+          steps.push([from, to]);
+          return;
+        }
+        generateMoves(n - 1, from, aux, to, steps);
+        steps.push([from, to]);
+        generateMoves(n - 1, aux, to, from, steps);
+      }
+
+      function playMoves() {
+        if (solving || moveQueue.length === 0) return;
+
+        solving = true;
+        statusShortEl.textContent = 'Running';
+        setStatus('Automating recursive solution...');
+
+        const executeNext = () => {
+          if (moveQueue.length === 0) {
+            solving = false;
+            setStatus(`Finished! ${moves} moves used for ${diskCount} disks.`, 'success');
+            return;
+          }
+
+          const [from, to] = moveQueue.shift();
+          moveDisk(from, to);
+          timerId = setTimeout(executeNext, 450);
+        };
+
+        executeNext();
+      }
+
+      function solve() {
+        if (solving) return;
+        moves = 0;
+        moveCountEl.textContent = '0';
+        buildInitialState();
+        const steps = [];
+        generateMoves(diskCount, 0, 2, 1, steps);
+        moveQueue = steps;
+        playMoves();
+      }
+
+      function resetBoard() {
+        if (timerId) clearTimeout(timerId);
+        solving = false;
+        buildInitialState();
+      }
+
+      diskSlider.addEventListener('input', (event) => {
+        diskCount = Number(event.target.value);
+        updateSummary();
+        resetBoard();
+      });
+
+      moveBtn.addEventListener('click', solve);
+      resetBtn.addEventListener('click', resetBoard);
+      resetBtnSmall.addEventListener('click', resetBoard);
+      autoPlayBtn.addEventListener('click', solve);
+
+      updateSummary();
+      buildInitialState();
+    </script>
+  </body>
+</html>
