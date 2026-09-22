@@ -1,0 +1,39 @@
+Faizan Ahamad Bhat
+AI/ML Engineering Student | Python & AI Developer
+
+Education
+B.E. Computer Science and Engineering (AI & ML), Bengaluru
+
+Profile
+3rd-year Engineering student specializing in Artificial Intelligence and Machine Learning. Interested in problem solving, Python, AI/ML, SQL/databases, practical projects, and continuous learning.
+
+Skills
+Programming: Python, Java, C
+AI/ML: AI/ML fundamentals, NLP, Generative AI
+Database: MySQL, MongoDB, SQL
+Tools: Git, GitHub, Kali Linux, Ubuntu
+Problem Solving: 50+ LeetCode problems
+
+Completed Projects
+- NCET Admission Assistant - Python, NLP, AI; live demo and GitHub links are available on the portfolio.
+- Tower of Hanoi Game - Java recursion puzzle; live demo and GitHub links are available on the portfolio.
+- LeetCode 50+ Problem Solving
+
+Projects In Progress
+- Personal AI Chatbot - Python, Grok API, LangChain, Streamlit.
+- Slide-Sentinel - AI-based landslide risk monitoring platform under development.
+
+Certifications
+- Red Hat Java EE (AD183)
+- Oracle Java Fundamentals
+- Oracle AI Foundations Associate
+- CodeChef 500 Difficulty
+- Python Programming with Red Hat
+- C Essentials 1 (Cisco Networking Academy)
+- IBM AI Literacy
+- MongoDB CRUD Operations
+
+Contact
+Email: bhatfaizan471@gmail.com
+GitHub: https://github.com/bhatfaizan471-png
+LinkedIn: https://www.linkedin.com/in/faizan-ahamad-bhat-71a570385/

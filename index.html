@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#070d18" />
-    <title>Faizan Ahamad Bhat | B.E. CSE (AI & ML) | Software Developer</title>
+    <title>Faizan Ahmad Bhat | AI/ML Engineering Student &amp; Python Developer</title>
     <meta
       name="description"
-      content="Faizan Ahamad Bhat - B.E. CSE (AI & ML) Student and Software Developer portfolio featuring prize-winning chatbot, 50+ LeetCode, projects, and certifications."
+      content="Faizan Ahmad Bhat is a 3rd-year AI/ML engineering student building practical Python applications, automation, database solutions, and AI prototypes."
     />
+    <meta property="og:title" content="Faizan Ahmad Bhat | AI/ML Engineering Student &amp; Python Developer" />
+    <meta property="og:description" content="Portfolio of practical Python, AI/ML, database, and web application projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://faizanahamadbhat.netlify.app/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2367d7ff'/%3E%3Ctext x='32' y='42' text-anchor='middle' fill='%23060b14' font-family='Arial,sans-serif' font-size='24' font-weight='700'%3EFA%3C/text%3E%3C/svg%3E" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -863,6 +868,47 @@
         flex-wrap: wrap;
       }
 
+      .section-cta {
+        margin-top: 1.35rem;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .badge-progress {
+        color: #081320;
+        background: linear-gradient(135deg, #9bf2d0, #67d7ff);
+      }
+
+      .project-status {
+        color: #b8f5df;
+        font-size: 0.86rem;
+        font-weight: 700;
+        margin-top: 0.55rem;
+      }
+
+      .project-details {
+        margin-top: 0.9rem;
+        border-top: 1px solid rgba(147, 205, 255, 0.14);
+        padding-top: 0.75rem;
+      }
+
+      .project-details summary {
+        cursor: pointer;
+        color: #dff4ff;
+        font-weight: 700;
+      }
+
+      .project-details p {
+        margin-top: 0.7rem;
+      }
+
+      .btn-disabled {
+        color: var(--muted);
+        border-color: rgba(147, 205, 255, 0.12);
+        background: rgba(255, 255, 255, 0.02);
+        cursor: not-allowed;
+      }
+
       .btn-sm {
         min-height: 40px;
         padding: 0.58rem 0.88rem;
@@ -1204,7 +1250,7 @@
         </a>
         <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
         <nav class="nav-links" id="navLinks">
-          <a href="#hero">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
+          <a href="#hero">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -1214,14 +1260,14 @@
         <div class="site-shell">
           <article class="hero-card glass">
             <div class="hero-content">
-              <p class="eyebrow">Premium Developer Portfolio</p>
+              <p class="eyebrow">AI/ML Engineering Student</p>
               <h1 class="hero-title">Faizan Ahamad Bhat</h1>
-              <p class="hero-subtitle">B.E. CSE (AI & ML) Student | Software Developer</p>
-              <p class="hero-desc">Building clean, fast, and recruiter-friendly digital products with strong focus on frontend quality, backend fundamentals, AI/ML learning, and consistent problem-solving.</p>
+              <p class="hero-subtitle">AI/ML Engineering Student | Python &amp; AI Developer</p>
+              <p class="hero-desc">I build practical AI applications, Python automation, database solutions, and modern web applications while continuing to grow through hands-on projects.</p>
               <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
-                <button id="downloadResume" class="btn btn-secondary">Download Resume</button>
-                <a href="#contact" class="btn btn-ghost">Contact Me</a>
+                <a href="#services" class="btn btn-secondary">Work With Me</a>
+                <button id="downloadResume" class="btn btn-ghost">Download Resume</button>
               </div>
               <div class="socials">
                 <a href="https://github.com/bhatfaizan471-png" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -1237,7 +1283,8 @@
               </div>
             </div>
             <div class="hero-visual">
-              <article class="photo-wrap hero-portrait glass"><img src="images/profile/photo3.jpg" alt="Faizan Ahamad Bhat portrait" class="photo" onerror="this.src='https://placehold.co/900x1100/09172b/edf6ff?text=Faizan+Ahamad+Bhat'"></article>
+              <article class="photo-wrap hero-portrait glass"><img src="images/profile/photo.jpeg" alt="Faizan Ahamad Bhat portrait" class="photo">
+              </article>
               <div class="hero-badges">
                 <article class="mini glass"><p>50+ LeetCode</p></article>
                 <article class="mini glass"><p>Prize-winning Chatbot</p></article>
@@ -1248,15 +1295,20 @@
         </div>
       </section>
 
-      <section id="about" class="reveal"><div class="site-shell"><div class="section-head"><p class="eyebrow">About</p><h2>Professional profile built for recruiters and real opportunities.</h2><p class="section-note">Faizan Ahamad Bhat is focused on full stack development and AI/ML studies, with strong problem-solving and practical project execution.</p></div><div class="grid-4"><article class="card glass"><div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div><h3>Education</h3><p>B.E. Computer Science and Engineering (AI & ML), Bengaluru.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div><h3>Skills</h3><p>Python, Java, C, MySQL, MongoDB, Git, GitHub and structured learning in AI/ML.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-trophy"></i></div><h3>Experience</h3><p>Project competitions, certifications, and practical coding practice including 50+ LeetCode.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-brain"></i></div><h3>Interests</h3><p>AI-powered web apps, full stack systems, clean UI design, and scalable engineering habits.</p></article></div></div></section>
+      <section id="about" class="reveal"><div class="site-shell"><div class="section-head"><p class="eyebrow">About</p><h2>Learning by building practical solutions.</h2><p class="section-note">I am a 3rd-year Engineering student specializing in Artificial Intelligence and Machine Learning. I enjoy solving problems with Python, exploring AI/ML fundamentals, working with SQL and databases, and turning ideas into practical projects. I am still learning, testing, and improving with every build.</p></div><div class="grid-4"><article class="card glass"><div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div><h3>Education</h3><p>B.E. Computer Science and Engineering (AI &amp; ML), Bengaluru.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div><h3>Problem Solving</h3><p>Hands-on coding practice, project competitions, and a consistent focus on understanding how solutions work.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-database"></i></div><h3>Practical Development</h3><p>Python applications, SQL and database work, automation ideas, and small web experiences.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-brain"></i></div><h3>Continuous Learning</h3><p>Building a stronger foundation in AI/ML, generative AI, and reliable software development practices.</p></article></div></div></section>
 
-      <section id="skills" class="reveal"><div class="site-shell"><div class="section-head"><p class="eyebrow">Skills</p><h2>Core technical strengths and operating system proficiency.</h2></div><div class="grid-3"><article class="card glass"><div class="card-icon"><i class="fa-solid fa-code"></i></div><h3>Programming & Development</h3><div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C</span></div></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-database"></i></div><h3>Database & Data</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">MongoDB</span></div></article><article class="card glass"><div class="card-icon"><i class="fa-brands fa-git-alt"></i></div><h3>Version Control</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span></div></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div><h3>Problem Solving</h3><div class="chips"><span class="chip">50+ LeetCode Problems</span></div></article><article class="card glass"><div class="card-icon"><i class="fa-brands fa-linux"></i></div><h3>Operating Systems</h3><div class="chips"><span class="chip">Kali Linux</span><span class="chip">Ubuntu</span><span class="chip">Windows</span></div></article></div></div></section>
+      <section id="skills" class="reveal"><div class="site-shell"><div class="section-head"><p class="eyebrow">Skills</p><h2>Tools and foundations I use to build and learn.</h2></div><div class="grid-3"><article class="card glass"><div class="card-icon"><i class="fa-solid fa-code"></i></div><h3>Programming</h3><div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C</span></div></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-brain"></i></div><h3>AI/ML</h3><div class="chips"><span class="chip">AI/ML Fundamentals</span><span class="chip">NLP</span><span class="chip">Generative AI</span></div></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-database"></i></div><h3>Database</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">SQL</span></div></article><article class="card glass"><div class="card-icon"><i class="fa-brands fa-git-alt"></i></div><h3>Tools</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Kali Linux</span><span class="chip">Ubuntu</span></div></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div><h3>Problem Solving</h3><div class="chips"><span class="chip">50+ LeetCode Problems</span></div></article></div></div></section>
+
+      <section id="services" class="reveal"><div class="site-shell"><div class="section-head"><p class="eyebrow">Student Freelancer</p><h2>What I Can Help With</h2><p class="section-note">Need help with a small project or automation task? I can help turn your idea into a practical solution while keeping the scope clear and realistic.</p></div><div class="grid-3"><article class="card glass"><div class="card-icon"><i class="fa-solid fa-gears"></i></div><h3>Python Automation</h3><p>Small scripts and workflow helpers for repetitive tasks and data processing.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-database"></i></div><h3>SQL &amp; Database Solutions</h3><p>Support with queries, database structure, and practical CRUD-focused work.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-robot"></i></div><h3>AI Chatbot Prototypes</h3><p>Early-stage conversational AI ideas and learning-focused chatbot prototypes.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-chart-line"></i></div><h3>Streamlit Applications</h3><p>Simple interactive applications that make a Python project easier to explore.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-filter"></i></div><h3>Data Cleaning</h3><p>Organizing, cleaning, and preparing small datasets for analysis or application use.</p></article><article class="card glass"><div class="card-icon"><i class="fa-solid fa-display"></i></div><h3>Technical Presentations</h3><p>Clear technical PPT and presentation design for student or project communication.</p></article></div><div class="section-cta"><a href="#contact" class="btn btn-primary">Let's Work Together</a></div></div></section>
 
       <section id="projects" class="reveal"><div class="site-shell"><div class="section-head"><p class="eyebrow">Projects</p><h2>Projects highlighting implementation depth and achievement impact.</h2></div><div class="grid-3"><article class="card glass"><div class="project-visual p-chatbot"><span class="project-label">AI Assistant</span></div><div class="badge-row"><span class="badge badge-prize"><i class="fa-solid fa-trophy"></i> Prize Winner</span></div><h3>NCET Admission Assistant</h3><p>AI-powered assistant for admissions and student queries using Python and NLP. Won a college competition as a <strong>Prize Winner</strong> project.</p><div class="chips"><span class="chip">Python</span><span class="chip">NLP</span><span class="chip">AI</span></div><div class="proj-actions"><a class="btn btn-sm btn-primary" href="https://ncetchatbot.streamlit.app/" target="_blank" rel="noreferrer">Live Demo</a><a class="btn btn-sm btn-secondary" href="https://github.com/bhatfaizan471-png/collage_chatbot" target="_blank" rel="noreferrer">GitHub</a></div></article><article class="card glass"><div class="project-visual p-hanoi"><span class="project-label">Recursion Puzzle</span></div><h3>Tower of Hanoi Game</h3><p>Java-based interactive puzzle that demonstrates recursion, algorithmic thinking, and structured user flow.</p><div class="chips"><span class="chip">Java</span><span class="chip">Recursion</span></div><div class="proj-actions"><a class="btn btn-sm btn-primary" href="https://tower-of-honai-game.onrender.com/" target="_blank" rel="noreferrer">Live Demo</a><a class="btn btn-sm btn-secondary" href="https://github.com/bhatfaizan471-png/Tower_of_Honai_game" target="_blank" rel="noreferrer">GitHub</a></div></article><article class="card glass"><div class="project-visual p-leet"><span class="project-label">DSA Journey</span></div><h3>LeetCode 50+ Problem Solving</h3><p>Practice track across arrays, dynamic programming, recursion, and SQL with consistent optimization focus.</p><div class="chips"><span class="chip">DSA</span><span class="chip">SQL</span><span class="chip">Java/Python</span></div><div class="proj-actions"><a class="btn btn-sm btn-primary" href="https://leetcode.com/u/FAIXAN/" target="_blank">Live Demo</a><a class="btn btn-sm btn-secondary" href="https://leetcode.com/u/FAIXAN/" target="_blank">GitHub</a></div></article></div></div></section>
 
       <section id="certificates" class="reveal"><div class="site-shell"><div class="section-head"><p class="eyebrow">Certificates</p><h2>Verified certifications and achievement milestones (8 total).</h2></div><div class="grid-4"><article class="card glass"><div class="cert-media loading"><span class="cert-fallback"><i class="fa-brands fa-java"></i></span></div><h3>Red Hat Java EE (AD183)</h3><p>32 Credit Hours, April 2026</p></article><article class="card glass"><div class="cert-media loading"><span class="cert-fallback"><i class="fa-brands fa-oracle"></i></span></div><h3>Oracle Java Fundamentals</h3><p>Award of Completion, April 2026</p></article><article class="card glass"><div class="cert-media loading"><span class="cert-fallback"><i class="fa-solid fa-brain"></i></span></div><h3>Oracle AI Foundations Associate</h3><p>Valid till Nov 2027</p></article><article class="card glass"><div class="cert-media loading"><span class="cert-fallback"><i class="fa-solid fa-code"></i></span></div><h3>CodeChef 500 Difficulty</h3><p>Completed all practice problems, April 2026</p></article><article class="card glass"><div class="cert-media loading"><span class="cert-fallback"><i class="fa-brands fa-python"></i></span></div><h3>Python Programming with Red Hat (AD141)</h3><p>Certificate of Attendance</p></article><article class="card glass"><div class="cert-media loading"><span class="cert-fallback"><i class="fa-solid fa-c"></i></span></div><h3>C Essentials 1</h3><p>Cisco Networking Academy, Sep 04, 2025</p></article><article class="card glass"><div class="cert-media loading"><span class="cert-fallback"><i class="fa-solid fa-microchip"></i></span></div><h3>IBM AI Literacy</h3><p>Issued 20 Dec 2025, Credly Verified</p></article><article class="card glass"><div class="cert-media loading"><span class="cert-fallback"><i class="fa-solid fa-database"></i></span></div><h3>MongoDB CRUD Operations</h3><p>Practical database CRUD implementation</p></article></div></div></section>
 
       <section id="contact" class="reveal"><div class="site-shell"><div class="section-head"><p class="eyebrow">Contact</p><h2>Open to internships, collaboration, and full stack opportunities.</h2></div><div class="contact-grid"><article class="card glass"><h3>Let's Connect</h3><p class="section-note" style="margin-top:0.65rem">Reach out for projects, internships, and role opportunities in Full Stack Development and AIML.</p><div class="contact-list"><a href="mailto:bhatfaizan471@gmail.com"><i class="fa-solid fa-envelope"></i> bhatfaizan471@gmail.com</a><a href="tel:+916006525161"><i class="fa-solid fa-phone"></i> +91 60065 25161</a><span><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka</span><span><i class="fa-solid fa-mountain"></i> Anantnag, Verinag, Jammu & Kashmir</span></div><div class="contact-social"><a href="https://github.com/bhatfaizan471-png" target="_blank">GitHub</a><a href="https://www.linkedin.com/in/faizan-ahamad-bhat-71a570385/" target="_blank">LinkedIn</a><a href="https://leetcode.com/u/FAIXAN/" target="_blank">LeetCode</a></div></article><article class="card glass"><form id="contactForm" novalidate><div class="field-grid"><label><span>Name</span><input id="name" type="text" placeholder="Your name" minlength="2" required></label><label><span>Email</span><input id="email" type="email" placeholder="you@example.com" required></label></div><label><span>Subject</span><input id="subject" type="text" placeholder="Internship / project inquiry" minlength="3" required></label><label><span>Message</span><textarea id="message" rows="6" placeholder="Tell me about your requirement" minlength="20" required></textarea></label><div style="display:flex;gap:0.8rem;align-items:center;flex-wrap:wrap"><button type="submit" class="btn btn-primary">Send Message</button><p id="formMsg" class="form-msg" aria-live="polite"></p></div></form></article></div></div></section>
+      <section id="work-in-progress" class="reveal"><div class="site-shell"><div class="section-head"><p class="eyebrow">Currently Building</p><h2>Projects in progress</h2><p class="section-note">These are active development projects. They are presented as work in progress and are not being claimed as completed, deployed, or production-ready.</p></div><div class="grid-2"><article class="card glass"><div class="project-visual p-chatbot"><span class="project-label">Conversational AI</span></div><div class="badge-row"><span class="badge badge-progress"><i class="fa-solid fa-hammer"></i> Currently Building</span></div><h3>Personal AI Chatbot</h3><p>Currently building a personal AI chatbot focused on conversational AI and practical AI application development.</p><p class="project-status">Status: In Progress</p><div class="chips"><span class="chip">Python</span><span class="chip">Grok API</span><span class="chip">LangChain</span><span class="chip">Streamlit</span></div><details class="project-details"><summary>Project details</summary><p><strong>Problem:</strong> Explore a practical conversational AI experience. <strong>Approach:</strong> Developing and testing the application with the listed tools. <strong>Result:</strong> Still under development.</p></details><div class="proj-actions"><span class="btn btn-sm btn-disabled" aria-label="GitHub link to be added">GitHub link pending</span></div></article><article class="card glass"><div class="project-visual p-leet"><span class="project-label">Risk Monitoring</span></div><div class="badge-row"><span class="badge badge-progress"><i class="fa-solid fa-hammer"></i> Currently Building</span></div><h3>Slide-Sentinel</h3><p>An AI-based landslide risk monitoring platform currently under development, focused on combining rainfall, terrain and environmental factors to estimate location-specific landslide risk.</p><p class="project-status">Status: In Progress</p><div class="chips"><span class="chip">AI/ML</span><span class="chip">Rainfall Data</span><span class="chip">Terrain Factors</span></div><details class="project-details"><summary>Project details</summary><p><strong>Problem:</strong> Explore location-specific landslide risk estimation. <strong>Approach:</strong> Combining rainfall, terrain, and environmental factors as the project develops. <strong>Result:</strong> Still under development; no deployment or operational result is being claimed.</p></details><div class="proj-actions"><span class="btn btn-sm btn-disabled" aria-label="GitHub link to be added">GitHub link pending</span></div></article></div></div></section>
+
+      <section id="freelance-cta" class="reveal"><div class="site-shell"><article class="hero-card glass freelance-cta"><div><p class="eyebrow">Open To Small Projects</p><h2>Have a project in mind?</h2><p class="section-note">I'm available for small freelance projects, automation tasks, AI prototypes, database work, and technical applications. We can start with a clear scope and a practical next step.</p></div><div class="hero-actions"><a href="#contact" class="btn btn-primary">Contact Me</a><a href="https://github.com/bhatfaizan471-png" target="_blank" rel="noopener" class="btn btn-secondary">View GitHub</a></div></article></div></section>
     </main>
 
     <footer><div class="site-shell"><div class="footer-inner"><div><h3 style="font-size:1.02rem">Faizan Ahamad Bhat</h3><p class="section-note">B.E. CSE (AI & ML) Student | Software Developer</p></div><div class="footer-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></div><div class="footer-social"><a href="https://github.com/bhatfaizan471-png" target="_blank"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/faizan-ahamad-bhat-71a570385/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://leetcode.com/u/FAIXAN/" target="_blank"><i class="fa-solid fa-code"></i></a></div></div><p class="footer-meta">© <span id="year"></span> Faizan Ahamad Bhat. All rights reserved.</p></div></footer>
@@ -1478,11 +1530,7 @@
 
       function setupCertificateLoading() {
         const certCards = Array.from(document.querySelectorAll("#certificates .card"));
-        const sources = new Map([
-          ["Red Hat Java EE (AD183)", "logos/certifications/redhat-python-programming.png"],
-          ["Python Programming with Red Hat (AD141)", "images/py redhat.png"],
-          ["MongoDB CRUD Operations", "logos/certifications/mongodb-crud-operations.png"],
-        ]);
+        const sources = new Map();
         const accents = [
           ["#5dd6ff", "#7b7bff"],
           ["#ffbf63", "#8f7cff"],
@@ -1596,12 +1644,12 @@
         const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("show"); observer.unobserve(e.target); } }); }, { threshold: 0.16 });
         revealEls.forEach(el => observer.observe(el));
       }
-      function downloadResumeTxt() {
-        const resumeText = `Faizan Ahamad Bhat\nB.E. CSE (AI & ML) Student | Software Developer\n\nPrimary Address: Bengaluru, Karnataka\nAlternate Address: Anantnag, Verinag, Jammu & Kashmir\nEmail: bhatfaizan471@gmail.com\nPhone: +91 60065 25161\n\nSkills:\n- Python, Java, C\n- MySQL, MongoDB\n- Git, GitHub\n- Problem Solving (50+ LeetCode)\n- Kali Linux, Ubuntu, Windows\n\nProjects:\n1. College Inquiry Chatbot - Prize Winner (Python & NLP)\n2. Tower of Hanoi Game - Java recursion puzzle\n3. LeetCode 50+ Problem Solving\n\nCertificates:\n- Red Hat Java EE (AD183), 32 Credit Hours\n- Oracle Java Fundamentals\n- Oracle AI Foundations Associate\n- CodeChef 500 Difficulty\n- Python Programming with Red Hat\n- C Essentials 1 (Cisco)\n- IBM AI Literacy\n- MongoDB CRUD Operations`;
-        const blob = new Blob([resumeText], { type: "text/plain" });
+      function openResumePdf() {
+        const resumePath = "resume.pdf"; // [ADD resume.pdf TO PROJECT ROOT]
         const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "Faizan_Ahamad_Bhat_Resume.txt";
+        link.href = resumePath;
+        link.target = "_blank";
+        link.rel = "noopener";
         link.click();
         link.remove();
       }
@@ -1667,11 +1715,11 @@
         } catch (e) { /* silent */ }
       }
       function customDownloadResume() {
-        const resumeText = `Faizan Ahamad Bhat\nB.E. CSE (AI & ML) Student | Software Developer\n\nPrimary Address: Bengaluru, Karnataka\nAlternate Address: Anantnag, Verinag, Jammu & Kashmir\nEmail: bhatfaizan471@gmail.com\nPhone: +91 60065 25161\n\nSkills:\n- Python, Java, C\n- MySQL, MongoDB\n- Git, GitHub\n- Problem Solving (50+ LeetCode)\n- Kali Linux, Ubuntu, Windows\n\nProjects:\n1. College Inquiry Chatbot - Prize Winner (Python & NLP)\n2. Tower of Hanoi Game - Python recursion puzzle\n3. LeetCode 50+ Problem Solving\n\nCertificates:\n- Red Hat Java EE (AD183), 32 Credit Hours\n- Oracle Java Fundamentals\n- Oracle AI Foundations Associate\n- CodeChef 500 Difficulty\n- Python Programming with Red Hat\n- C Essentials 1 (Cisco)\n- IBM AI Literacy\n- MongoDB CRUD Operations`;
-        const blob = new Blob([resumeText], { type: "text/plain" });
+        const resumePath = "resume.pdf"; // [ADD resume.pdf TO PROJECT ROOT]
         const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "Faizan_Ahamad_Bhat_Resume.txt";
+        link.href = resumePath;
+        link.target = "_blank";
+        link.rel = "noopener";
         link.click();
         link.remove();
       }

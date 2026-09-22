@@ -14,29 +14,6 @@ const typedNameEl = document.getElementById('typedName');
 // ✅ FIX: Declare fullName BEFORE using it
 const fullName = "Faizan Ahamad Bhat";
 
-// ========== RESUME CONTENT ==========
-const resumeText = `Faizan Ahamad Bhat
-B.E. CSE (AI & ML) Student | Software Developer
-
-Highlights
-- 50+ LeetCode problems solved
-- Prize-winning college inquiry chatbot
-- B.E. Computer Science (AIML)
-
-Core Skills
-Python, Java, C, MySQL, MongoDB, Git, GitHub, AI/ML basics
-Operating Systems: Kali Linux, Ubuntu, Windows
-
-Contact
-bhatfaizan471@gmail.com
-+91 60065 25161
-GitHub: github.com/bhatfaizan471-png
-LinkedIn: linkedin.com/in/faizan-ahamad-bhat-71a570385/
-
-Addresses
-Primary: Bengaluru, Karnataka
-Alternate: Anantnag, Verinag, Jammu & Kashmir`;
-
 // ========== TYPING EFFECT WITH PAUSE ==========
 let typeIndex = 0;
 let isWaiting = false;
@@ -231,15 +208,13 @@ function setupBackToTop() {
 
 // ========== RESUME DOWNLOAD ==========
 function downloadResume() {
-  const blob = new Blob([resumeText], { type: 'text/plain;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
   const anchor = document.createElement('a');
-  anchor.href = url;
-  anchor.download = 'Faizan_Ahamad_Bhat_Resume.txt';
+  anchor.href = 'resume.pdf'; // [ADD resume.pdf TO PROJECT ROOT]
+  anchor.target = '_blank';
+  anchor.rel = 'noopener';
   document.body.appendChild(anchor);
   anchor.click();
   anchor.remove();
-  URL.revokeObjectURL(url);
 }
 
 function setupResumeDownload() {
