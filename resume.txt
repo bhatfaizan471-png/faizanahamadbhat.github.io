@@ -27,11 +27,10 @@ Certifications
 - Red Hat Java EE (AD183)
 - Oracle Java Fundamentals
 - Oracle AI Foundations Associate
-- CodeChef 500 Difficulty
+- CodeChef certificate
 - Python Programming with Red Hat
 - C Essentials 1 (Cisco Networking Academy)
-- IBM AI Literacy
-- MongoDB CRUD Operations
+- Applied Database Systems 23ai (Oracle Academy)
 
 Contact
 Email: bhatfaizan471@gmail.com
