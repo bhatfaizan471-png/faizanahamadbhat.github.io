@@ -201,34 +201,39 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Portrait Photo Column */}
-          <div className="lg:col-span-4 flex justify-center lg:justify-end items-center animate-hero-delay-3">
-            <div className="group relative animate-portrait-float">
-              {/* Outer architectural offset rings */}
+          {/* Right Portrait Photo Column with 3D Backside Depth */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end items-center animate-hero-delay-3" style={{ perspective: '1200px' }}>
+            <div className="group relative animate-portrait-3d cursor-pointer">
+              {/* Backside 3D Depth Plate (offset architectural shadow slab) */}
               <div
                 aria-hidden="true"
-                className="absolute -inset-3 rounded-full border border-[#101010]/10 pointer-events-none transition-transform duration-700 group-hover:scale-[1.02]"
+                className="absolute inset-0 rounded-[28px] sm:rounded-[36px] bg-[#141414] -translate-x-3.5 translate-y-3.5 -rotate-2 border border-[#EAAE0F]/35 shadow-[0_24px_50px_rgba(0,0,0,0.38)] transition-transform duration-500 group-hover:-translate-x-5 group-hover:translate-y-5 group-hover:-rotate-3 pointer-events-none"
               />
+              {/* Architectural Gold Accent Wireframe Behind */}
               <div
                 aria-hidden="true"
-                className="absolute -inset-1.5 rounded-full border-t-2 border-r-2 border-[#EAAE0F]/80 border-b border-l border-transparent pointer-events-none rotate-12 transition-transform duration-700 group-hover:rotate-45"
+                className="absolute -inset-2 rounded-[32px] sm:rounded-[40px] border border-[#EAAE0F]/45 -translate-x-1.5 translate-y-1.5 pointer-events-none transition-transform duration-500 group-hover:-translate-x-3 group-hover:translate-y-3"
               />
 
-              {/* Circular Portrait Frame */}
-              <div className="relative w-[240px] h-[240px] sm:w-[310px] sm:h-[310px] xl:w-[368px] xl:h-[368px] rounded-full overflow-hidden bg-[#E9E6DF] shadow-[0_24px_60px_rgba(16,16,16,0.18)] ring-4 ring-[#F3F2EE]">
+              {/* 3D Foreground Portrait Frame */}
+              <div className="relative w-[240px] h-[320px] sm:w-[290px] sm:h-[390px] xl:w-[330px] xl:h-[440px] rounded-[28px] sm:rounded-[36px] overflow-hidden bg-gradient-to-b from-[#FAF8F5] via-[#EFECE6] to-[#E5E1D8] border border-[#101010]/15 shadow-[0_20px_50px_-10px_rgba(16,16,16,0.3),0_8px_20px_-4px_rgba(234,174,15,0.2)] ring-1 ring-white/60">
                 <img
                   src={personal.photoPath}
                   alt={personal.fullName}
-                  className="w-full h-full object-cover object-center scale-[1.03] transition-transform duration-700 group-hover:scale-[1.06]"
+                  className="w-full h-full object-cover object-top scale-[1.02] transition-transform duration-700 group-hover:scale-[1.05]"
                   onError={(e) => {
-                    // Fallback to photo3 if photo.jpeg fails
-                    (e.target as HTMLImageElement).src = '/images/profile/photo3.jpg';
+                    (e.target as HTMLImageElement).src = '/images/profile/photo.jpeg';
                   }}
+                />
+                {/* Subtle Inner Glass Sheen */}
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-white/10 pointer-events-none"
                 />
               </div>
 
               {/* Academic tag overlapping lower edge */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 lg:left-6 lg:translate-x-0 inline-flex items-center gap-2 rounded-full bg-[#101010] px-3.5 sm:px-4 py-1.5 text-[9px] sm:text-[10px] font-semibold tracking-[0.14em] uppercase text-white shadow-[0_10px_24px_rgba(0,0,0,0.22)] whitespace-nowrap">
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 lg:left-6 lg:translate-x-0 inline-flex items-center gap-2 rounded-full bg-[#101010] px-3.5 sm:px-4 py-1.5 text-[9px] sm:text-[10px] font-semibold tracking-[0.14em] uppercase text-white shadow-[0_12px_28px_rgba(0,0,0,0.35)] ring-1 ring-[#EAAE0F]/30 whitespace-nowrap z-20">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#EAAE0F]" />
                 <span>B.E. CSE (AI &amp; ML) · Bengaluru</span>
               </div>

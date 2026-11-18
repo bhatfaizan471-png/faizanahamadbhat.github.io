@@ -59,7 +59,7 @@ export const PORTFOLIO_DATA = {
     githubUrl: 'https://github.com/bhatfaizan471-png',
     leetcodeDisplay: 'leetcode.com/u/FAIXAN',
     leetcodeUrl: 'https://leetcode.com/u/FAIXAN/',
-    photoPath: '/images/profile/photo.jpeg',
+    photoPath: '/images/profile/photo.png',
     resumePath: '/resume.pdf',
     resumeFileName: 'Faizan_Ahamad_Bhat_Resume.pdf',
   },

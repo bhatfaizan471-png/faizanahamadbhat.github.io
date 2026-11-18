@@ -95,6 +95,27 @@
   animation: subtleFloat 7s ease-in-out infinite;
 }
 
+/* 3D Depth Card for Hero Portrait (little bit backside angle & floating depth) */
+@keyframes portraitFloat3D {
+  0%, 100% {
+    transform: perspective(1200px) rotateY(-8deg) rotateX(4deg) translateY(0px);
+  }
+  50% {
+    transform: perspective(1200px) rotateY(-4deg) rotateX(2deg) translateY(-8px);
+  }
+}
+
+.animate-portrait-3d {
+  transform-style: preserve-3d;
+  animation: portraitFloat3D 6.5s ease-in-out infinite;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+.animate-portrait-3d:hover {
+  transform: perspective(1200px) rotateY(-2deg) rotateX(1deg) scale(1.025) translateY(-4px);
+}
+
 /* Certificate 3D Card Opening Keyframes */
 @keyframes cardUnfoldIn {
   0% {
@@ -165,6 +186,7 @@
   .animate-hero-delay-2,
   .animate-hero-delay-3,
   .animate-portrait-float,
+  .animate-portrait-3d,
   .animate-card-open,
   .animate-card-backdrop {
     animation: none !important;
