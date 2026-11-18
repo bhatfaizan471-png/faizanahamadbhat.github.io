@@ -111,32 +111,6 @@ export const ServicesSection: React.FC = () => {
             );
           })}
         </div>
-
-        {/* Call to Action Banner */}
-        <div className="mt-12">
-          <Reveal delayMs={120}>
-            <div className="rounded-2xl bg-[#101010] text-white p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-[0_20px_50px_rgba(16,16,16,0.12)]">
-              <div>
-                <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#EAAE0F]">
-                  Open for Opportunities
-                </p>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold mt-1 text-white">
-                  Have a project or internship opening?
-                </h3>
-                <p className="text-sm text-white/70 mt-2 max-w-xl">
-                  Whether you need Python automation, a clean website, or database work, let&rsquo;s discuss how I can help.
-                </p>
-              </div>
-              <a
-                href="#contact"
-                className="shrink-0 inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#F6BE1E] to-[#E7A609] px-6 py-3 text-xs font-extrabold tracking-wider uppercase text-[#101010] hover:brightness-105 transition-all shadow-md"
-              >
-                <Send className="w-3.5 h-3.5" />
-                <span>Let&rsquo;s Work Together</span>
-              </a>
-            </div>
-          </Reveal>
-        </div>
       </div>
     </section>
   );

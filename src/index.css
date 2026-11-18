@@ -95,12 +95,81 @@
   animation: subtleFloat 7s ease-in-out infinite;
 }
 
+/* Certificate 3D Card Opening Keyframes */
+@keyframes cardUnfoldIn {
+  0% {
+    opacity: 0;
+    transform: perspective(1400px) rotateX(24deg) translateY(48px) scale(0.9);
+  }
+  65% {
+    opacity: 1;
+    transform: perspective(1400px) rotateX(-2deg) translateY(-4px) scale(1.008);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1400px) rotateX(0deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes cardBackdropFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+  }
+}
+
+@keyframes certPeekUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-card-open {
+  animation: cardUnfoldIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transform-origin: center bottom;
+}
+
+.animate-card-backdrop {
+  animation: cardBackdropFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Interactive Certificate Card 3D Perspective Lift */
+.cert-card-interactive {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cert-card-interactive:hover {
+  transform: translateY(-6px) perspective(1200px) rotateX(3deg);
+  border-color: rgba(234, 174, 15, 0.5);
+  box-shadow: 0 20px 42px -10px rgba(16, 16, 16, 0.12), 0 0 24px -4px rgba(234, 174, 15, 0.22);
+}
+
+.cert-card-interactive:active {
+  transform: scale(0.98) translateY(-2px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-hero-in,
   .animate-hero-delay-1,
   .animate-hero-delay-2,
   .animate-hero-delay-3,
-  .animate-portrait-float {
+  .animate-portrait-float,
+  .animate-card-open,
+  .animate-card-backdrop {
     animation: none !important;
+  }
+  .cert-card-interactive:hover {
+    transform: none !important;
   }
 }

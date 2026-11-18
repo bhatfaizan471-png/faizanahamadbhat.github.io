@@ -67,7 +67,12 @@ export const PORTFOLIO_DATA = {
     'I build practical AI applications, responsive websites, Python automation, and database solutions—applying AI/ML and software engineering foundations to real-world challenges.',
   glanceMetrics: [
     {
-      value: '50+',
+      value: '8.0',
+      suffix: '/10',
+      label: 'B.E. CSE (AI & ML) CGPA',
+    },
+    {
+      value: '100+',
       suffix: '',
       label: 'LeetCode problems solved',
     },
@@ -75,11 +80,6 @@ export const PORTFOLIO_DATA = {
       value: '7',
       suffix: '',
       label: 'Industry certifications',
-    },
-    {
-      value: '4',
-      suffix: '',
-      label: 'Core systems built',
     },
     {
       value: '1st',
@@ -100,6 +100,8 @@ export const PORTFOLIO_DATA = {
   education: {
     degree: 'Bachelor of Engineering in CSE (Artificial Intelligence & Machine Learning)',
     institution: 'Nagarjuna College of Engineering and Technology (NCET), Bengaluru',
+    cgpaValue: '8.0 / 10',
+    cgpaNote: 'Cumulative CGPA',
     statusNote: '3rd Year · Class of 2027',
     expectedGraduation: '2027',
     coursework: [
@@ -116,7 +118,7 @@ export const PORTFOLIO_DATA = {
     context: 'Academic Projects & Practical Builds',
     bullets: [
       'Awarded Prize Winner in college competition for developing the NCET Admission Assistant NLP chatbot.',
-      'Active algorithmic problem solver with 50+ problems solved on LeetCode across arrays, DP, recursion, and SQL.',
+      'Active algorithmic problem solver with 100+ problems solved on LeetCode across arrays, DP, recursion, and SQL.',
       'Developed database-driven web systems including Riwaaj Ledger, recursive puzzle engines, and Streamlit prototypes.',
     ],
   },
@@ -174,7 +176,7 @@ export const PORTFOLIO_DATA = {
       label: 'Problem Solving & CS',
       items: [
         'Data Structures & Algorithms',
-        'LeetCode (50+ Solved)',
+        'LeetCode (100+ Solved)',
         'Recursion & Backtracking',
         'Algorithmic Thinking',
         'CodeChef 500 Difficulty',
@@ -298,10 +300,10 @@ export const PORTFOLIO_DATA = {
       title: 'LeetCode Problem Solving',
       category: 'DSA Journey & Practice',
       description:
-        'Consistent practice track across arrays, dynamic programming, recursion, binary search, and SQL with real-time profile integration.',
+        'Consistent practice track across arrays, dynamic programming, recursion, binary search, and SQL with 100+ problems solved and real-time profile integration.',
       technologies: ['DSA', 'SQL', 'Java', 'Python', 'LeetCode API'],
       highlights: [
-        '50+ solved challenges across algorithms and database problem sets.',
+        '100+ solved challenges across algorithms and database problem sets.',
         'Deep focus on time complexity analysis and memory optimization.',
         'Connected to live LeetCode stats API displaying verified problem count.',
       ],

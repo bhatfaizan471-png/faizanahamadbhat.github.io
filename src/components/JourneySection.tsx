@@ -58,18 +58,18 @@ export const JourneySection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Status Callout */}
+                  {/* CGPA & Academic Callout */}
                   <div className="flex items-center gap-3.5 bg-white/[0.04] border border-white/10 rounded-xl px-4 py-3">
                     <span
                       aria-hidden="true"
                       className="accent-bar-vertical-light h-11 shrink-0"
                     />
                     <div>
-                      <p className="font-condensed text-2xl font-bold leading-none text-white">
-                        3rd Year
+                      <p className="font-condensed text-3xl font-bold leading-none text-white">
+                        8.0 <span className="text-base font-normal text-white/60">/ 10</span>
                       </p>
-                      <p className="mt-1 text-[11px] text-white/60">
-                        {education.statusNote}
+                      <p className="mt-1 text-[11px] text-[#EAAE0F] font-semibold tracking-wider uppercase">
+                        B.E. CGPA · 3rd Year
                       </p>
                     </div>
                   </div>

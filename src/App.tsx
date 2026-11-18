@@ -7,6 +7,7 @@ import { SkillsSection } from './components/SkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ServicesSection } from './components/ServicesSection';
 import { CertificationsSection } from './components/CertificationsSection';
+import { WorkTogetherSection } from './components/WorkTogetherSection';
 import { ContactSection } from './components/ContactSection';
 
 const SECTION_IDS: NavSectionId[] = [
@@ -81,6 +82,7 @@ export const App: React.FC = () => {
         <ProjectsSection />
         <ServicesSection />
         <CertificationsSection />
+        <WorkTogetherSection />
       </main>
       <ContactSection />
     </div>

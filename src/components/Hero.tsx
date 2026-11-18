@@ -4,7 +4,7 @@ import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
   const { personal, heroQuote, glanceMetrics } = PORTFOLIO_DATA;
-  const [leetcodeCount, setLeetcodeCount] = useState<string>('50+');
+  const [leetcodeCount, setLeetcodeCount] = useState<string>('100+');
 
   useEffect(() => {
     // Dynamic LeetCode stats fetcher with graceful fallback
@@ -16,11 +16,12 @@ export const Hero: React.FC = () => {
         if (res.ok) {
           const data = await res.json();
           if (data && typeof data.totalSolved === 'number' && data.totalSolved > 0) {
-            setLeetcodeCount(`${data.totalSolved}`);
+            const solved = data.totalSolved;
+            setLeetcodeCount(solved >= 100 ? `${solved}+` : '100+');
           }
         }
       } catch {
-        // Keeps verified 50+ fallback
+        // Keeps verified 100+ fallback
       }
     };
     fetchLeetCode();
@@ -253,8 +254,9 @@ export const Hero: React.FC = () => {
 
         {/* Right Metrics Strip with Two-Tone Black+Gold Vertical Bars */}
         <div className="flex-1 bg-gradient-to-r from-[#F3F2EE] via-[#F2F1ED] to-[#E5E2DA] px-5 sm:px-10 lg:px-14 py-6 lg:py-7 grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 items-center">
-          {glanceMetrics.map((metric, idx) => {
-            const displayValue = idx === 0 ? leetcodeCount : metric.value;
+          {glanceMetrics.map((metric) => {
+            const isLeetCode = metric.label.toLowerCase().includes('leetcode');
+            const displayValue = isLeetCode ? leetcodeCount : metric.value;
             return (
               <div key={metric.label} className="flex items-center gap-3 sm:gap-4 min-w-0">
                 <span
