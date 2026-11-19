@@ -243,10 +243,10 @@ export const PORTFOLIO_DATA = {
       issuer: 'Cisco Networking Academy',
       issuerGroup: 'Cisco',
       year: '2025',
-      description: 'Cisco Networking Academy C Essentials 1 Certificate · September 04, 2025',
+      description: 'Statement of Achievement · Cisco Networking Academy & OpenEDG C++ Institute · September 04, 2025',
       imagePath: '/logos/certifications/cisco-c-essentials.png',
       pdfPath: '/logos/certifications/cessentials1update20260512-32-fqhs3e.pdf',
-      badgeLabel: 'Cisco Academy',
+      badgeLabel: 'Cisco Verified',
     },
     {
       id: 'ibm-ai-literacy',
