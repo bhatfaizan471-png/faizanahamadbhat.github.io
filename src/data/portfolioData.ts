@@ -132,7 +132,7 @@ export const PORTFOLIO_DATA = {
     {
       id: 'programming',
       label: 'Programming Languages',
-      items: ['Python', 'Java', 'C', 'SQL', 'JavaScript', 'TypeScript'],
+      items: ['Python', 'Java', 'C', 'C++', 'SQL', 'JavaScript'],
     },
     {
       id: 'ai-ml',
@@ -164,9 +164,7 @@ export const PORTFOLIO_DATA = {
       items: [
         'Git',
         'GitHub',
-        'Kali Linux',
         'Ubuntu',
-        'Linux CLI',
         'VS Code',
         'Vite',
       ],

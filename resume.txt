@@ -8,11 +8,11 @@ Profile
 3rd-year Engineering student specializing in Artificial Intelligence and Machine Learning. Interested in problem solving, Python, AI/ML, SQL/databases, practical projects, and continuous learning.
 
 Skills
-Programming: Python, Java, C
+Programming: Python, Java, C, C++
 AI/ML: AI/ML fundamentals, NLP, Generative AI
 Database: MySQL, MongoDB, SQL
-Tools: Git, GitHub, Kali Linux, Ubuntu
-Problem Solving: 50+ LeetCode problems
+Tools: Git, GitHub, Ubuntu
+Problem Solving: 100+ LeetCode problems
 
 Completed Projects
 - NCET Admission Assistant - Python, NLP, AI; live demo and GitHub links are available on the portfolio.
